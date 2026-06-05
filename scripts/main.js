@@ -8,7 +8,8 @@ const fallbackProducts = [
       { name: "IP Network Camera", description: "กล้องวงจรปิดระบบเครือข่ายสำหรับองค์กร", tag: "Surveillance" },
       { name: "DVMS Platform", description: "ระบบจัดการและบันทึกวิดีโอดิจิตอล", tag: "Video Management" },
       { name: "Access Control", description: "ระบบควบคุมประตูและยืนยันตัวตน", tag: "Smart Access" },
-      { name: "Alarm & Fire", description: "ระบบแจ้งเตือนภัยบุกรุกและเพลิงไหม้", tag: "Incident Protection" }
+      { name: "AI Threat Alerts", description: "ตรวจจับและแจ้งเตือนภัยคุกคามหลายรูปแบบ", tag: "Incident Protection" },
+      { name: "AIOC War Room", description: "แดชบอร์ดศูนย์ควบคุมกลางสำหรับภาพรวมเหตุการณ์", tag: "Control Room" }
     ]
   }
 ];
@@ -58,9 +59,10 @@ function renderProductFilters(products) {
   const iconForItem = (item, selected) => {
     const name = `${item.name} ${item.tag}`.toLowerCase();
     if (selected.id !== "all") return selected.id;
-    if (name.includes("dvms") || name.includes("video management")) return "dvms";
+    if (name.includes("aioc") || name.includes("war room") || name.includes("dvms") || name.includes("video management")) return "dvms";
     if (name.includes("access")) return "access-control";
-    if (name.includes("alarm") || name.includes("fire")) return "intrusion-alarm";
+    if (name.includes("lpr") || name.includes("speed") || name.includes("license") || name.includes("radar") || name.includes("drone")) return "specialized-cameras";
+    if (name.includes("alarm") || name.includes("fire") || name.includes("threat") || name.includes("weapon") || name.includes("flood") || name.includes("face") || name.includes("incident")) return "intrusion-alarm";
     if (name.includes("network")) return "network-it";
     return "ip-cameras";
   };

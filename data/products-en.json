@@ -8,7 +8,8 @@
       {"name": "IP Network Camera", "description": "Network-based surveillance cameras for enterprise sites.", "tag": "Surveillance"},
       {"name": "DVMS Platform", "description": "Digital video management and recording platform.", "tag": "Video Management"},
       {"name": "Access Control", "description": "Door control and identity verification systems.", "tag": "Smart Access"},
-      {"name": "Alarm & Fire", "description": "Intrusion and fire event protection systems.", "tag": "Incident Protection"}
+      {"name": "AI Threat Alerts", "description": "Multi-scenario threat detection and alerting.", "tag": "Incident Protection"},
+      {"name": "AIOC War Room", "description": "Central command dashboard for incident visibility.", "tag": "Control Room"}
     ]
   },
   {
@@ -32,7 +33,7 @@
       {"name": "Video Recording", "description": "Digital video recording and retention.", "tag": "Recording"},
       {"name": "Monitoring Console", "description": "Centralized control room interface.", "tag": "Control Room"},
       {"name": "Playback & Search", "description": "Search and review recorded footage.", "tag": "Investigation"},
-      {"name": "User Permission", "description": "Role-based access for operators.", "tag": "Security"}
+      {"name": "AIOC War Room Dashboard", "description": "Combines camera views, incidents, and system status for the command center.", "tag": "AIOC"}
     ]
   },
   {
@@ -44,7 +45,8 @@
       {"name": "Thermal Camera", "description": "Heat detection for high-risk areas.", "tag": "Thermal"},
       {"name": "Multi-Sensor Camera", "description": "Wide coverage through multiple sensors.", "tag": "Panoramic"},
       {"name": "Night Vision Camera", "description": "Monitoring in low-light environments.", "tag": "Low Light"},
-      {"name": "Analytics Ready", "description": "Prepared for intelligent video analysis.", "tag": "AI Ready"}
+      {"name": "LPR & Speed Detection", "description": "Detects license plates and vehicle speed in controlled areas.", "tag": "Traffic AI"},
+      {"name": "Radar & Drone Detection", "description": "Supports radar, drone detection, and perimeter threat monitoring concepts.", "tag": "Perimeter AI"}
     ]
   },
   {
@@ -85,14 +87,15 @@
   },
   {
     "id": "intrusion-alarm",
-    "label": "Intrusion Alarm",
-    "title": "Alarm & Intrusion Monitoring",
-    "summary": "Intrusion and abnormal-event alarm systems designed for centralized monitoring and fast response.",
+    "label": "AI Alerts",
+    "title": "AI Threat & Incident Monitoring",
+    "summary": "Centralized threat detection and alerting for faces, weapons, fire, flooding, license plates, vehicle speed, and other abnormal events.",
     "items": [
-      {"name": "Intrusion Sensor", "description": "Detects unauthorized access or movement.", "tag": "Sensor"},
-      {"name": "Alarm Panel", "description": "Central alarm control interface.", "tag": "Panel"},
-      {"name": "Incident Alert", "description": "Alerts operators to abnormal events.", "tag": "Alert"},
-      {"name": "24/7 Monitoring Ready", "description": "Designed for continuous monitoring.", "tag": "Monitoring"}
+      {"name": "Face & Identity Alert", "description": "Detects face and person-related security events.", "tag": "AI Vision"},
+      {"name": "Weapon & Threat Detection", "description": "Detects weapons, suspicious objects, and security threats.", "tag": "Threat AI"},
+      {"name": "Flood & Fire Alert", "description": "Alerts flooding, fire, and property-risk events.", "tag": "Safety"},
+      {"name": "LPR & Speed Event", "description": "Detects license plates and vehicle speed for traffic-related alerts.", "tag": "Traffic"},
+      {"name": "AIOC Incident Console", "description": "Routes incidents into a war-room dashboard for response prioritization.", "tag": "AIOC"}
     ]
   },
   {

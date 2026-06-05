@@ -108,7 +108,7 @@ text(draw, (170, 210), "IPM Technovation Since 1995", F14, WHITE)
 text(draw, (170, 270), "ยกระดับความปลอดภัยองค์กร", F46B, WHITE)
 text(draw, (170, 326), "ด้วยระบบอัจฉริยะครบวงจร", F46B, WHITE)
 text(draw, (170, 382), "โดย IPM", F46B, WHITE)
-text(draw, (170, 452), "ออกแบบ ติดตั้ง และดูแลระบบ CCTV, Access Control, Alarm และ Network Security", F18, (230, 238, 247))
+text(draw, (170, 452), "ออกแบบ ติดตั้ง และดูแลระบบ CCTV, Access Control, AI Alerts และ Network Security", F18, (230, 238, 247))
 text(draw, (170, 484), "ด้วยความเชี่ยวชาญกว่า 30 ปี", F18, (230, 238, 247))
 rounded(draw, (170, 535, 315, 583), 10, RED)
 text(draw, (242, 559), "ดูภาพรวมระบบ", F14, WHITE, "mm")
@@ -118,7 +118,7 @@ text(draw, (397, 559), "บริการของเรา", F14, WHITE, "mm")
 rounded(draw, (1050, 230, 1320, 380), 16, (8, 19, 33), (90, 126, 154))
 text(draw, (1070, 254), "Status", F12, (210, 226, 238))
 text(draw, (1250, 254), "Integrated Security", F14, WHITE, "mm")
-for i, label in enumerate(["CCTV Monitoring & AI", "Smart Access Control", "Intrusion & Fire Alarm", "Secure Enterprise Network"]):
+for i, label in enumerate(["CCTV Monitoring & AI", "Smart Access Control", "AI Threat & Incident Alerts", "Secure Enterprise Network"]):
     y = 284 + i * 34
     fill = (17, 82, 118) if i == 0 else (21, 38, 56)
     rounded(draw, (1070, y, 1300, y + 26), 10, fill)
@@ -145,7 +145,7 @@ text(draw, (690, 1130), "Control Center", F24B, WHITE, "mm")
 nodes = [
     ("camera", "CCTV Monitoring & AI", "กล้อง, DVMS, Thermal", 185, 925),
     ("access", "Smart Access Control", "FaceScan, Biometrics", 975, 925),
-    ("alarm", "Incident Management", "Alarm & Fire", 185, 1105),
+    ("alarm", "AI Threat Monitoring", "Face, Weapon, LPR", 185, 1105),
     ("network", "Unified Network Security", "Network Infrastructure", 975, 1105),
 ]
 for kind, title, sub, x, y in nodes:
@@ -157,7 +157,7 @@ for kind, title, sub, x, y in nodes:
 
 draw.rectangle((0, 1300, W, 1800), fill=SOFT)
 text(draw, (120, 1368), "ผลิตภัณฑ์และระบบหลัก", F32B, INK)
-chips = ["All Products", "IP Cameras", "DVMS", "Specialized Cameras", "Infrared & Lights", "Wireless Video", "Access Control", "Intrusion Alarm", "Fire Protection", "Network & IT"]
+chips = ["All Products", "IP Cameras", "DVMS", "Specialized Cameras", "Infrared & Lights", "Wireless Video", "Access Control", "AI Alerts", "Fire Protection", "Network & IT"]
 x = 120
 y = 1430
 for i, chip in enumerate(chips):
@@ -180,7 +180,7 @@ text(draw, (184, 1638), "▦", F24B, WHITE, "mm")
 text(draw, (150, 1688), "Selected Category", F12, RED)
 text(draw, (150, 1722), "All Products", F24B, INK)
 
-for i, label in enumerate(["IP Network Camera", "DVMS Platform", "Access Control", "Alarm & Fire"]):
+for i, label in enumerate(["IP Network Camera", "AIOC War Room", "Access Control", "AI Threat Alerts"]):
     x = 640 + (i % 2) * 290
     y = 1580 + (i // 2) * 84
     rounded(draw, (x, y, x + 260, y + 68), 16, WHITE, LINE)

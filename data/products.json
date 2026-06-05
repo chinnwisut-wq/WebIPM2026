@@ -8,7 +8,8 @@
       {"name": "IP Network Camera", "description": "กล้องวงจรปิดระบบเครือข่ายสำหรับองค์กร", "tag": "Surveillance"},
       {"name": "DVMS Platform", "description": "ระบบจัดการและบันทึกวิดีโอดิจิตอล", "tag": "Video Management"},
       {"name": "Access Control", "description": "ระบบควบคุมประตูและยืนยันตัวตน", "tag": "Smart Access"},
-      {"name": "Alarm & Fire", "description": "ระบบแจ้งเตือนภัยบุกรุกและเพลิงไหม้", "tag": "Incident Protection"}
+      {"name": "AI Threat Alerts", "description": "ตรวจจับและแจ้งเตือนภัยคุกคามหลายรูปแบบ", "tag": "Incident Protection"},
+      {"name": "AIOC War Room", "description": "แดชบอร์ดศูนย์ควบคุมกลางสำหรับภาพรวมเหตุการณ์", "tag": "Control Room"}
     ]
   },
   {
@@ -32,7 +33,7 @@
       {"name": "Video Recording", "description": "ระบบบันทึกภาพดิจิตอล", "tag": "Recording"},
       {"name": "Monitoring Console", "description": "หน้าจอควบคุมศูนย์กลาง", "tag": "Control Room"},
       {"name": "Playback & Search", "description": "ค้นหาและตรวจสอบภาพย้อนหลัง", "tag": "Investigation"},
-      {"name": "User Permission", "description": "กำหนดสิทธิ์ผู้ใช้งาน", "tag": "Security"}
+      {"name": "AIOC War Room Dashboard", "description": "รวมภาพกล้อง เหตุการณ์ และสถานะระบบในศูนย์ควบคุมกลาง", "tag": "AIOC"}
     ]
   },
   {
@@ -44,7 +45,8 @@
       {"name": "Thermal Camera", "description": "ตรวจจับความร้อนในพื้นที่เสี่ยง", "tag": "Thermal"},
       {"name": "Multi-Sensor Camera", "description": "มุมมองกว้างหลายทิศทาง", "tag": "Panoramic"},
       {"name": "Night Vision Camera", "description": "มองเห็นในสภาพแสงน้อย", "tag": "Low Light"},
-      {"name": "Analytics Ready", "description": "พร้อมต่อยอดระบบวิเคราะห์ภาพ", "tag": "AI Ready"}
+      {"name": "LPR & Speed Detection", "description": "ตรวจจับป้ายทะเบียนรถและความเร็วในพื้นที่ควบคุม", "tag": "Traffic AI"},
+      {"name": "Radar & Drone Detection", "description": "รองรับแนวทางตรวจจับโดรน เรดาร์ และภัยคุกคามรอบพื้นที่", "tag": "Perimeter AI"}
     ]
   },
   {
@@ -85,14 +87,15 @@
   },
   {
     "id": "intrusion-alarm",
-    "label": "Intrusion Alarm",
-    "title": "Alarm & Intrusion Monitoring",
-    "summary": "ระบบแจ้งเตือนภัยบุกรุกและเหตุผิดปกติ พร้อมแนวทางเชื่อมต่อศูนย์ควบคุมกลาง",
+    "label": "AI Alerts",
+    "title": "AI Threat & Incident Monitoring",
+    "summary": "ระบบตรวจจับและแจ้งเตือนภัยคุกคามแบบรวมศูนย์ ครอบคลุมใบหน้า อาวุธ เพลิงไหม้ น้ำท่วม ป้ายทะเบียน ความเร็วรถ และเหตุผิดปกติอื่นๆ",
     "items": [
-      {"name": "Intrusion Sensor", "description": "ตรวจจับการบุกรุก", "tag": "Sensor"},
-      {"name": "Alarm Panel", "description": "ควบคุมสัญญาณเตือน", "tag": "Panel"},
-      {"name": "Incident Alert", "description": "แจ้งเตือนเหตุผิดปกติ", "tag": "Alert"},
-      {"name": "24/7 Monitoring Ready", "description": "ออกแบบเพื่อเฝ้าระวังต่อเนื่อง", "tag": "Monitoring"}
+      {"name": "Face & Identity Alert", "description": "ตรวจจับใบหน้าและเหตุการณ์ที่เกี่ยวข้องกับบุคคล", "tag": "AI Vision"},
+      {"name": "Weapon & Threat Detection", "description": "ตรวจจับอาวุธ วัตถุต้องสงสัย และภัยคุกคาม", "tag": "Threat AI"},
+      {"name": "Flood & Fire Alert", "description": "แจ้งเตือนน้ำท่วม เพลิงไหม้ และเหตุเสี่ยงต่อทรัพย์สิน", "tag": "Safety"},
+      {"name": "LPR & Speed Event", "description": "ตรวจจับป้ายทะเบียนและความเร็วรถเพื่อแจ้งเตือนเหตุจราจร", "tag": "Traffic"},
+      {"name": "AIOC Incident Console", "description": "รวมเหตุการณ์เข้าสู่แดชบอร์ดวอร์รูมเพื่อจัดลำดับการตอบสนอง", "tag": "AIOC"}
     ]
   },
   {
