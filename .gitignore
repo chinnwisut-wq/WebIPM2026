@@ -6,3 +6,4 @@ assets/logoNew.png
 *.tmp
 site-preview.png
 node_modules/
+qa-responsive/
