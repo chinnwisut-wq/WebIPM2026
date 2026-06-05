@@ -1168,6 +1168,20 @@ textarea {
   border: 0;
 }
 
+.site-footer {
+  padding: 24px 20px 34px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  background: #fff;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
 @media (max-width: 980px) {
   .site-header {
     top: 12px;
