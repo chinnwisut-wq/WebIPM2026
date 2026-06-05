@@ -134,7 +134,8 @@ for i, (kind, title, sub) in enumerate([("camera", "CCTV", "Monitoring & AI"), (
 
 draw.rectangle((0, 720, W, H), fill=WHITE)
 text(draw, (W // 2, 790), "System Connection Overview", F14, RED, "mm")
-text(draw, (W // 2, 832), "ภาพรวมการเชื่อมต่อระบบความปลอดภัย", F32B, INK, "mm")
+text(draw, (W // 2, 820), "ภาพรวมการเชื่อมต่อระบบ", F32B, INK, "mm")
+text(draw, (W // 2, 858), "ความปลอดภัย", F32B, INK, "mm")
 
 rounded(draw, (120, 900, 1320, 1260), 24, (249, 251, 253), LINE)
 draw.ellipse((570, 950, 810, 1190), fill=BLUE, outline=(122, 205, 255), width=2)
@@ -160,7 +161,7 @@ chips = ["All Products", "IP Cameras", "DVMS", "Specialized Cameras", "Infrared 
 x = 120
 y = 1430
 for i, chip in enumerate(chips):
-    width = 74 + len(chip) * 7
+    width = 96 + len(chip) * 7
     if x + width > 1320:
         x = 120
         y += 58
@@ -168,12 +169,14 @@ for i, chip in enumerate(chips):
     outline = (56, 189, 248) if i == 0 else (205, 221, 234)
     color = WHITE if i == 0 else (38, 54, 72)
     rounded(draw, (x, y, x + width, y + 42), 21, fill, outline)
-    text(draw, (x + width // 2, y + 21), chip, F12, color, "mm")
+    rounded(draw, (x + 14, y + 9, x + 40, y + 35), 8, NAVY)
+    text(draw, (x + 27, y + 22), "▦", F12, WHITE, "mm")
+    text(draw, (x + 48, y + 21), chip, F12, color)
     x += width + 10
 
 rounded(draw, (120, 1580, 600, 1730), 18, WHITE, LINE)
-rounded(draw, (150, 1604, 218, 1672), 18, (231, 246, 253))
-text(draw, (184, 1638), "▦", F24B, BLUE, "mm")
+rounded(draw, (150, 1604, 218, 1672), 18, NAVY)
+text(draw, (184, 1638), "▦", F24B, WHITE, "mm")
 text(draw, (150, 1688), "Selected Category", F12, RED)
 text(draw, (150, 1722), "All Products", F24B, INK)
 
@@ -181,7 +184,7 @@ for i, label in enumerate(["IP Network Camera", "DVMS Platform", "Access Control
     x = 640 + (i % 2) * 290
     y = 1580 + (i // 2) * 84
     rounded(draw, (x, y, x + 260, y + 68), 16, WHITE, LINE)
-    rounded(draw, (x + 18, y + 16, x + 56, y + 54), 12, BLUE)
+    rounded(draw, (x + 18, y + 16, x + 56, y + 54), 12, NAVY)
     text(draw, (x + 37, y + 35), "▦", F16, WHITE, "mm")
     text(draw, (x + 70, y + 16), label, F16, INK)
     text(draw, (x + 70, y + 40), "Product group", F12, MUTED)

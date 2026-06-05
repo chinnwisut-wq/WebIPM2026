@@ -65,6 +65,11 @@ function renderProductFilters(products) {
     return "ip-cameras";
   };
 
+  const productLinkFor = (item, selected) => {
+    if (item.url) return item.url;
+    return `#products`;
+  };
+
   const renderCategory = (categoryId) => {
     const selected = products.find((product) => product.id === categoryId) || products[0];
     filterBar.querySelectorAll(".filter-chip").forEach((button) => {
@@ -81,14 +86,14 @@ function renderProductFilters(products) {
     `;
 
     list.innerHTML = selected.items.map((item) => `
-      <article>
+      <a class="product-card-link" href="${productLinkFor(item, selected)}" data-product-link="${selected.id}">
         <i class="product-card-icon filter-icon ${iconForItem(item, selected)}" aria-hidden="true"></i>
         <div>
           <strong>${item.name}</strong>
           <small>${item.description}</small>
           <span>${item.tag}</span>
         </div>
-      </article>
+      </a>
     `).join("");
   };
 
@@ -113,6 +118,21 @@ function renderProductFilters(products) {
   renderCategory("all");
 }
 
+function sourceLogo(item) {
+  const sourceDomains = {
+    "CNET": "https://www.cnet.com/",
+    "vocal.media": "https://vocal.media/",
+    "Cisco Newsroom": "https://newsroom.cisco.com/",
+    "Communications Today": "https://www.communicationstoday.co.in/",
+    "MarketsandMarkets": "https://www.marketsandmarkets.com/",
+    "Security Today": "https://securitytoday.com/",
+    "The Independent": "https://www.independent.co.uk/",
+    "Korea JoongAng Daily": "https://koreajoongangdaily.joins.com/"
+  };
+  const domainUrl = sourceDomains[item.sourceName] || item.sourceUrl || "https://www.ipm.co.th/";
+  return `https://www.google.com/s2/favicons?domain_url=${encodeURIComponent(domainUrl)}&sz=128`;
+}
+
 function renderNews(news, lang) {
   const list = document.querySelector("[data-news-list]");
   const updated = document.querySelector("[data-news-updated]");
@@ -129,6 +149,10 @@ function renderNews(news, lang) {
 
   list.innerHTML = (news.items || []).slice(0, 6).map((item) => `
     <article class="news-card">
+      <div class="news-image">
+        <img src="${item.imageUrl || sourceLogo(item)}" alt="${item.sourceName || "News source"}" loading="lazy">
+        <b>${item.sourceName || "Source"}</b>
+      </div>
       <span>${item.category || "Security"}</span>
       <h3>${item.title}</h3>
       <p>${item.summary}</p>
