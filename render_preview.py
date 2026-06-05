@@ -169,13 +169,13 @@ for i, chip in enumerate(chips):
     outline = (56, 189, 248) if i == 0 else (205, 221, 234)
     color = WHITE if i == 0 else (38, 54, 72)
     rounded(draw, (x, y, x + width, y + 42), 21, fill, outline)
-    rounded(draw, (x + 14, y + 9, x + 40, y + 35), 8, RED)
+    rounded(draw, (x + 14, y + 9, x + 40, y + 35), 8, NAVY)
     text(draw, (x + 27, y + 22), "▦", F12, WHITE, "mm")
     text(draw, (x + 48, y + 21), chip, F12, color)
     x += width + 10
 
 rounded(draw, (120, 1580, 600, 1730), 18, WHITE, LINE)
-rounded(draw, (150, 1604, 218, 1672), 18, RED)
+rounded(draw, (150, 1604, 218, 1672), 18, NAVY)
 text(draw, (184, 1638), "▦", F24B, WHITE, "mm")
 text(draw, (150, 1688), "Selected Category", F12, RED)
 text(draw, (150, 1722), "All Products", F24B, INK)
@@ -184,7 +184,7 @@ for i, label in enumerate(["IP Network Camera", "AIOC War Room", "Access Control
     x = 640 + (i % 2) * 290
     y = 1580 + (i // 2) * 84
     rounded(draw, (x, y, x + 260, y + 68), 16, WHITE, LINE)
-    rounded(draw, (x + 18, y + 16, x + 56, y + 54), 12, RED)
+    rounded(draw, (x + 18, y + 16, x + 56, y + 54), 12, NAVY)
     text(draw, (x + 37, y + 35), "▦", F16, WHITE, "mm")
     text(draw, (x + 70, y + 16), label, F16, INK)
     text(draw, (x + 70, y + 40), "Product group", F12, MUTED)
