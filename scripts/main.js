@@ -19,10 +19,17 @@ const fallbackNews = {
   items: [
     {
       category: "AI CCTV",
-      title: "AI Video Analytics ช่วยยกระดับการเฝ้าระวังองค์กร",
-      summary: "ระบบกล้องวงจรปิดยุคใหม่สามารถต่อยอดสู่การวิเคราะห์เหตุการณ์และการแจ้งเตือนเชิงรุกได้",
-      sourceName: "IPM Weekly Brief",
-      sourceUrl: "https://www.ipm.co.th/"
+      title: "External AI video analytics update",
+      summary: "ข่าวจากแหล่งภายนอกเกี่ยวกับ AI, CCTV และการวิเคราะห์ภาพสำหรับระบบรักษาความปลอดภัยองค์กร",
+      sourceName: "Security Today",
+      sourceUrl: "https://securitytoday.com/"
+    },
+    {
+      category: "Cybersecurity",
+      title: "Enterprise cybersecurity brief",
+      summary: "ข่าวจากแหล่งภายนอกเกี่ยวกับความปลอดภัยไซเบอร์ เครือข่ายองค์กร และภัยคุกคามที่ควรติดตาม",
+      sourceName: "The Hacker News",
+      sourceUrl: "https://thehackernews.com/"
     }
   ]
 };
@@ -32,10 +39,17 @@ const fallbackNewsEn = {
   items: [
     {
       category: "AI CCTV",
-      title: "AI Video Analytics Moves Surveillance Beyond Recording",
-      summary: "Modern CCTV systems can support proactive monitoring through video analytics and abnormal-event detection.",
-      sourceName: "IPM Weekly Brief",
-      sourceUrl: "https://www.ipm.co.th/"
+      title: "External AI video analytics update",
+      summary: "External news covering AI, CCTV, and video analytics for enterprise security systems.",
+      sourceName: "Security Today",
+      sourceUrl: "https://securitytoday.com/"
+    },
+    {
+      category: "Cybersecurity",
+      title: "Enterprise cybersecurity brief",
+      summary: "External news covering cybersecurity, network security, and emerging operational threats.",
+      sourceName: "The Hacker News",
+      sourceUrl: "https://thehackernews.com/"
     }
   ]
 };
@@ -131,7 +145,7 @@ function sourceLogo(item) {
     "The Independent": "https://www.independent.co.uk/",
     "Korea JoongAng Daily": "https://koreajoongangdaily.joins.com/"
   };
-  const domainUrl = sourceDomains[item.sourceName] || item.sourceUrl || "https://www.ipm.co.th/";
+  const domainUrl = sourceDomains[item.sourceName] || item.sourceUrl || "https://news.google.com/";
   return `https://www.google.com/s2/favicons?domain_url=${encodeURIComponent(domainUrl)}&sz=128`;
 }
 

@@ -3,15 +3,23 @@ import { writeFile } from "node:fs/promises";
 const feeds = [
   {
     category: "AI CCTV",
-    url: "https://news.google.com/rss/search?q=CCTV%20AI%20video%20surveillance%20security%20technology&hl=en-US&gl=US&ceid=US:en"
+    url: "https://news.google.com/rss/search?q=AI%20CCTV%20video%20surveillance%20physical%20security%20OR%20video%20analytics&hl=en-US&gl=US&ceid=US:en"
   },
   {
-    category: "IT Security",
-    url: "https://news.google.com/rss/search?q=enterprise%20IT%20security%20network%20infrastructure&hl=en-US&gl=US&ceid=US:en"
+    category: "Cybersecurity",
+    url: "https://news.google.com/rss/search?q=enterprise%20cybersecurity%20network%20security%20threat%20intelligence&hl=en-US&gl=US&ceid=US:en"
   },
   {
-    category: "Innovation",
-    url: "https://news.google.com/rss/search?q=smart%20building%20security%20access%20control%20innovation&hl=en-US&gl=US&ceid=US:en"
+    category: "Access Control",
+    url: "https://news.google.com/rss/search?q=access%20control%20biometrics%20facial%20recognition%20building%20security&hl=en-US&gl=US&ceid=US:en"
+  },
+  {
+    category: "AIOC & Analytics",
+    url: "https://news.google.com/rss/search?q=security%20operations%20center%20AI%20analytics%20license%20plate%20recognition%20speed%20detection&hl=en-US&gl=US&ceid=US:en"
+  },
+  {
+    category: "Drone & Radar",
+    url: "https://news.google.com/rss/search?q=counter%20drone%20radar%20perimeter%20security%20detection%20technology&hl=en-US&gl=US&ceid=US:en"
   }
 ];
 
@@ -59,21 +67,35 @@ function cleanTitle(title) {
 function makeFallbackSummaryTh(item) {
   const title = item.title.replace(/\s+-\s+[^-]+$/, "").trim();
   const introByCategory = {
-    "AI CCTV": "ประเด็นนี้เกี่ยวข้องกับการพัฒนา AI, กล้องวงจรปิด และระบบวิเคราะห์ภาพสำหรับงานรักษาความปลอดภัย",
-    "IT Security": "ประเด็นนี้เกี่ยวข้องกับความปลอดภัยด้าน IT และโครงสร้างเครือข่ายที่องค์กรควรติดตาม",
-    "Innovation": "ประเด็นนี้สะท้อนทิศทางนวัตกรรมที่เกี่ยวข้องกับระบบอาคารและความปลอดภัยอัจฉริยะ"
+    "AI CCTV": "ข่าวจากแหล่งภายนอกนี้เกี่ยวข้องกับ AI, CCTV และระบบวิเคราะห์ภาพสำหรับงานรักษาความปลอดภัย",
+    "Cybersecurity": "ข่าวจากแหล่งภายนอกนี้เกี่ยวข้องกับความปลอดภัยไซเบอร์และโครงสร้างเครือข่ายองค์กร",
+    "Access Control": "ข่าวจากแหล่งภายนอกนี้เกี่ยวข้องกับ Access Control, Biometrics และระบบยืนยันตัวตน",
+    "AIOC & Analytics": "ข่าวจากแหล่งภายนอกนี้เกี่ยวข้องกับศูนย์ควบคุมอัจฉริยะ, Video Analytics, LPR และการตรวจจับเหตุการณ์",
+    "Drone & Radar": "ข่าวจากแหล่งภายนอกนี้เกี่ยวข้องกับการตรวจจับโดรน เรดาร์ และความปลอดภัยรอบพื้นที่"
   };
-  return `${introByCategory[item.category] || "ประเด็นนี้เกี่ยวข้องกับเทคโนโลยีความปลอดภัยองค์กร"}: ${title}`;
+  return `${introByCategory[item.category] || "ข่าวจากแหล่งภายนอกนี้เกี่ยวข้องกับเทคโนโลยีความปลอดภัยองค์กร"}: ${title}`;
 }
 
 function makeFallbackSummaryEn(item) {
   const title = cleanTitle(item.title);
   const introByCategory = {
-    "AI CCTV": "This update relates to AI video surveillance, CCTV analytics, and smarter monitoring",
-    "IT Security": "This update relates to enterprise IT security, network infrastructure, and operational resilience",
-    "Innovation": "This update reflects innovation trends in smart buildings, access control, and integrated security"
+    "AI CCTV": "External news update covering AI video surveillance, CCTV analytics, and smarter monitoring",
+    "Cybersecurity": "External news update covering enterprise cybersecurity, network security, and resilience",
+    "Access Control": "External news update covering access control, biometrics, and identity systems",
+    "AIOC & Analytics": "External news update covering intelligent control rooms, video analytics, LPR, and event detection",
+    "Drone & Radar": "External news update covering counter-drone, radar, and perimeter detection technology"
   };
-  return `${introByCategory[item.category] || "This update relates to enterprise security technology"}: ${title}`;
+  return `${introByCategory[item.category] || "External news update covering enterprise security technology"}: ${title}`;
+}
+
+function dedupeByTitle(items) {
+  const seen = new Set();
+  return items.filter((item) => {
+    const key = cleanTitle(item.title).toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 function limitPerCategory(items, limit = 2) {
@@ -84,6 +106,24 @@ function limitPerCategory(items, limit = 2) {
     counts.set(item.category, current + 1);
     return true;
   });
+}
+
+function balancedSelection(items, total = 6, perCategory = 2) {
+  const categories = [...new Set(feeds.map((feed) => feed.category))];
+  const selected = [];
+
+  for (const category of categories) {
+    const item = items.find((candidate) => candidate.category === category && !selected.includes(candidate));
+    if (item) selected.push(item);
+    if (selected.length >= total) return selected;
+  }
+
+  for (const item of limitPerCategory(items, perCategory)) {
+    if (!selected.includes(item)) selected.push(item);
+    if (selected.length >= total) return selected;
+  }
+
+  return selected;
 }
 
 function extractResponseText(data) {
@@ -100,7 +140,7 @@ function parseJsonText(text) {
 async function summarizeWithOpenAI(items) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
-    const selected = limitPerCategory(items, 2).slice(0, 6);
+    const selected = balancedSelection(items, 6, 2);
     return {
       thItems: selected.map((item) => ({
         category: item.category,
@@ -131,11 +171,11 @@ async function summarizeWithOpenAI(items) {
       input: [
         {
           role: "system",
-          content: "You summarize technology news for a Thai corporate security systems website. Return JSON only."
+          content: "You summarize external technology news for a Thai corporate security systems website. Do not write as if the news is from IPM. Return JSON only."
         },
         {
           role: "user",
-          content: `Select the 6 most relevant items for IT, CCTV, access control, alarm, network security, and innovation. Return JSON only in this shape: {"thItems":[{"category":"","title":"","summary":"","sourceName":"","sourceUrl":""}],"enItems":[{"category":"","title":"","summary":"","sourceName":"","sourceUrl":""}]}. Thai summaries must be concise Thai. English summaries must be concise English. Preserve sourceName and sourceUrl.\n\n${JSON.stringify(items.slice(0, 12), null, 2)}`
+          content: `Select the 6 most relevant external news items for IT, CCTV, cybersecurity, access control, AIOC/control rooms, video analytics, license plate recognition, drone/radar detection, and security innovation. Avoid IPM as a source. Return JSON only in this shape: {"thItems":[{"category":"","title":"","summary":"","sourceName":"","sourceUrl":""}],"enItems":[{"category":"","title":"","summary":"","sourceName":"","sourceUrl":""}]}. Thai summaries must be concise Thai and mention that the item is from an external news source when natural. English summaries must be concise English. Preserve sourceName and sourceUrl.\n\n${JSON.stringify(items.slice(0, 20), null, 2)}`
         }
       ]
     })
@@ -156,7 +196,7 @@ async function summarizeWithOpenAI(items) {
 
 async function main() {
   const groups = await Promise.all(feeds.map(fetchFeed));
-  const rawItems = groups.flat();
+  const rawItems = dedupeByTitle(groups.flat()).filter((item) => !/ipm/i.test(`${item.sourceName} ${item.sourceUrl}`));
   const summarized = await summarizeWithOpenAI(rawItems);
   const baseMeta = {
     updatedAt: new Date().toISOString(),
@@ -166,7 +206,7 @@ async function main() {
     ...baseMeta,
     items: items.map((item) => ({
       category: item.category || "Security",
-      title: item.title,
+      title: cleanTitle(item.title),
       summary: item.summary,
       sourceName: item.sourceName || "Source",
       sourceUrl: item.sourceUrl
