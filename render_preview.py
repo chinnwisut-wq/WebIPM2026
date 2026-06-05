@@ -47,18 +47,18 @@ def rounded(draw, box, radius, fill, outline=None, width=1):
 
 def camera_icon(draw, x, y, scale=1, fill=RED):
     pts = [
-        (x, y + 10 * scale),
-        (x + 30 * scale, y + 4 * scale),
-        (x + 42 * scale, y + 8 * scale),
-        (x + 42 * scale, y + 22 * scale),
-        (x + 30 * scale, y + 26 * scale),
+        (x, y + 11 * scale),
+        (x + 38 * scale, y + 4 * scale),
+        (x + 55 * scale, y + 9 * scale),
+        (x + 55 * scale, y + 23 * scale),
+        (x + 38 * scale, y + 28 * scale),
         (x, y + 20 * scale),
     ]
     draw.line(pts + [pts[0]], fill=fill, width=max(2, int(2 * scale)))
-    draw.ellipse((x + 24 * scale, y + 11 * scale, x + 34 * scale, y + 21 * scale), outline=fill, width=max(2, int(2 * scale)))
-    draw.line((x + 13 * scale, y + 22 * scale, x + 9 * scale, y + 38 * scale), fill=fill, width=max(2, int(2 * scale)))
-    draw.line((x + 19 * scale, y + 23 * scale, x + 26 * scale, y + 38 * scale), fill=fill, width=max(2, int(2 * scale)))
-    draw.line((x + 5 * scale, y + 38 * scale, x + 31 * scale, y + 38 * scale), fill=fill, width=max(2, int(2 * scale)))
+    draw.ellipse((x + 34 * scale, y + 12 * scale, x + 46 * scale, y + 24 * scale), outline=fill, width=max(2, int(2 * scale)))
+    draw.line((x + 20 * scale, y + 25 * scale, x + 16 * scale, y + 44 * scale), fill=fill, width=max(2, int(2 * scale)))
+    draw.line((x + 28 * scale, y + 25 * scale, x + 36 * scale, y + 44 * scale), fill=fill, width=max(2, int(2 * scale)))
+    draw.line((x + 10 * scale, y + 44 * scale, x + 42 * scale, y + 44 * scale), fill=fill, width=max(2, int(2 * scale)))
 
 
 def small_icon(draw, x, y, kind):
@@ -136,22 +136,23 @@ draw.rectangle((0, 720, W, H), fill=WHITE)
 text(draw, (W // 2, 790), "System Connection Overview", F14, RED, "mm")
 text(draw, (W // 2, 832), "ภาพรวมการเชื่อมต่อระบบความปลอดภัย", F32B, INK, "mm")
 
-rounded(draw, (120, 900, 1320, 1240), 24, (249, 251, 253), LINE)
+rounded(draw, (120, 900, 1320, 1260), 24, (249, 251, 253), LINE)
 draw.ellipse((570, 950, 810, 1190), fill=BLUE, outline=(122, 205, 255), width=2)
 img.paste(logo, (650, 1034), logo)
 text(draw, (690, 1100), "Monitoring", F16, (230, 240, 250), "mm")
 text(draw, (690, 1130), "Control Center", F24B, WHITE, "mm")
 nodes = [
-    ("camera", "CCTV Monitoring & AI", "กล้อง, DVMS, Thermal", 190, 930),
-    ("access", "Smart Access Control", "FaceScan, Biometrics", 990, 940),
-    ("alarm", "Incident Management", "Alarm & Fire", 230, 1120),
-    ("network", "Unified Network Security", "Network Infrastructure", 960, 1120),
+    ("camera", "CCTV Monitoring & AI", "กล้อง, DVMS, Thermal", 185, 925),
+    ("access", "Smart Access Control", "FaceScan, Biometrics", 975, 925),
+    ("alarm", "Incident Management", "Alarm & Fire", 185, 1105),
+    ("network", "Unified Network Security", "Network Infrastructure", 975, 1105),
 ]
 for kind, title, sub, x, y in nodes:
-    rounded(draw, (x, y, x + 260, y + 118), 18, WHITE, LINE)
-    small_icon(draw, x + 18, y + 18, kind)
-    text(draw, (x + 72, y + 24), title, F18, INK)
-    text(draw, (x + 72, y + 56), sub, F14, MUTED)
+    rounded(draw, (x, y, x + 290, y + 145), 20, WHITE, LINE)
+    rounded(draw, (x + 115, y + 18, x + 175, y + 78), 18, (255, 240, 241))
+    small_icon(draw, x + 128, y + 30, kind)
+    text(draw, (x + 145, y + 90), title, F18, INK, "mm")
+    text(draw, (x + 145, y + 118), sub, F14, MUTED, "mm")
 
 draw.rectangle((0, 1300, W, 1800), fill=SOFT)
 text(draw, (120, 1368), "ผลิตภัณฑ์และระบบหลัก", F32B, INK)
@@ -171,16 +172,19 @@ for i, chip in enumerate(chips):
     x += width + 10
 
 rounded(draw, (120, 1580, 600, 1730), 18, WHITE, LINE)
-text(draw, (150, 1614), "Selected Category", F12, RED)
-text(draw, (150, 1650), "All Products", F24B, INK)
-text(draw, (150, 1690), "ภาพรวมสินค้าและระบบความปลอดภัยของ IPM", F16, MUTED)
+rounded(draw, (150, 1604, 218, 1672), 18, (231, 246, 253))
+text(draw, (184, 1638), "▦", F24B, BLUE, "mm")
+text(draw, (150, 1688), "Selected Category", F12, RED)
+text(draw, (150, 1722), "All Products", F24B, INK)
 
 for i, label in enumerate(["IP Network Camera", "DVMS Platform", "Access Control", "Alarm & Fire"]):
     x = 640 + (i % 2) * 290
     y = 1580 + (i // 2) * 84
     rounded(draw, (x, y, x + 260, y + 68), 16, WHITE, LINE)
-    text(draw, (x + 20, y + 18), label, F16, INK)
-    text(draw, (x + 20, y + 42), "Product group", F12, MUTED)
+    rounded(draw, (x + 18, y + 16, x + 56, y + 54), 12, BLUE)
+    text(draw, (x + 37, y + 35), "▦", F16, WHITE, "mm")
+    text(draw, (x + 70, y + 16), label, F16, INK)
+    text(draw, (x + 70, y + 40), "Product group", F12, MUTED)
 
 img.save(OUT)
 print(OUT)

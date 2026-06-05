@@ -55,6 +55,16 @@ function renderProductFilters(products) {
   const list = document.querySelector("[data-product-list]");
   if (!filterBar || !feature || !list) return;
 
+  const iconForItem = (item, selected) => {
+    const name = `${item.name} ${item.tag}`.toLowerCase();
+    if (selected.id !== "all") return selected.id;
+    if (name.includes("dvms") || name.includes("video management")) return "dvms";
+    if (name.includes("access")) return "access-control";
+    if (name.includes("alarm") || name.includes("fire")) return "intrusion-alarm";
+    if (name.includes("network")) return "network-it";
+    return "ip-cameras";
+  };
+
   const renderCategory = (categoryId) => {
     const selected = products.find((product) => product.id === categoryId) || products[0];
     filterBar.querySelectorAll(".filter-chip").forEach((button) => {
@@ -62,6 +72,9 @@ function renderProductFilters(products) {
     });
 
     feature.innerHTML = `
+      <div class="product-feature-icon" aria-hidden="true">
+        <span class="filter-icon ${selected.id}"></span>
+      </div>
       <span>Selected Category</span>
       <h3>${selected.title}</h3>
       <p>${selected.summary}</p>
@@ -69,9 +82,12 @@ function renderProductFilters(products) {
 
     list.innerHTML = selected.items.map((item) => `
       <article>
-        <strong>${item.name}</strong>
-        <small>${item.description}</small>
-        <span>${item.tag}</span>
+        <i class="product-card-icon filter-icon ${iconForItem(item, selected)}" aria-hidden="true"></i>
+        <div>
+          <strong>${item.name}</strong>
+          <small>${item.description}</small>
+          <span>${item.tag}</span>
+        </div>
       </article>
     `).join("");
   };
