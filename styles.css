@@ -199,10 +199,12 @@ textarea {
   position: relative;
   min-height: 760px;
   display: grid;
-  align-items: center;
+  align-items: start;
+  padding-top: 178px;
   overflow: hidden;
   color: #fff;
   background: var(--navy);
+  scroll-margin-top: 116px;
 }
 
 .hero::after {
@@ -241,7 +243,7 @@ textarea {
   position: relative;
   z-index: 2;
   width: min(1180px, calc(100% - 40px));
-  margin: 34px auto 0;
+  margin: 0 auto;
 }
 
 .eyebrow,
@@ -312,7 +314,7 @@ textarea {
   position: absolute;
   z-index: 3;
   right: max(24px, calc((100vw - 1180px) / 2));
-  top: 236px;
+  top: 218px;
   width: min(286px, calc(100% - 48px));
   padding: 14px;
   border: 1px solid rgba(255, 255, 255, .22);
@@ -485,6 +487,7 @@ textarea {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
   padding: 86px 0;
+  scroll-margin-top: 122px;
 }
 
 .section-heading {
@@ -730,6 +733,7 @@ textarea {
   padding: 86px max(20px, calc((100vw - 1180px) / 2));
   background: var(--soft);
   border-radius: 42px 42px 0 0;
+  scroll-margin-top: 122px;
 }
 
 .filter-bar {
@@ -1052,6 +1056,7 @@ textarea {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto 80px;
   padding: 78px 0 0;
+  scroll-margin-top: 122px;
 }
 
 .contact-heading {
