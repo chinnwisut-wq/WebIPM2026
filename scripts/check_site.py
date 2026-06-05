@@ -35,7 +35,7 @@ result = {
     "hasWideCctvIcon": "viewBox='0 0 52 34'" in (root / "styles.css").read_text(encoding="utf-8"),
     "hasThaiToEnglishLink": 'href="en.html"' in (root / "index.html").read_text(encoding="utf-8"),
     "hasEnglishToThaiLink": 'href="index.html"' in (root / "en.html").read_text(encoding="utf-8"),
-    "hasEnglishHero": "Elevating Enterprise Security" in (root / "en.html").read_text(encoding="utf-8"),
+    "hasEnglishHero": "Enterprise Security, Connected" in (root / "en.html").read_text(encoding="utf-8"),
 }
 
 print(json.dumps(result, ensure_ascii=False, indent=2))
