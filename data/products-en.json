@@ -89,11 +89,11 @@
     "id": "intrusion-alarm",
     "label": "AI Alerts",
     "title": "AI Threat & Incident Monitoring",
-    "summary": "Centralized threat detection and alerting for faces, weapons, fire, flooding, license plates, vehicle speed, and other abnormal events.",
+    "summary": "Centralized threat detection and alerting for faces, weapons, flooding, license plates, vehicle speed, and other abnormal events.",
     "items": [
       {"name": "Face & Identity Alert", "description": "Detects face and person-related security events.", "tag": "AI Vision"},
       {"name": "Weapon & Threat Detection", "description": "Detects weapons, suspicious objects, and security threats.", "tag": "Threat AI"},
-      {"name": "Flood & Fire Alert", "description": "Alerts flooding, fire, and property-risk events.", "tag": "Safety"},
+      {"name": "Flood & Safety Alert", "description": "Alerts flooding, property-risk events, and abnormal environmental conditions.", "tag": "Safety"},
       {"name": "LPR & Speed Event", "description": "Detects license plates and vehicle speed for traffic-related alerts.", "tag": "Traffic"},
       {"name": "AIOC Incident Console", "description": "Routes incidents into a war-room dashboard for response prioritization.", "tag": "AIOC"}
     ]
