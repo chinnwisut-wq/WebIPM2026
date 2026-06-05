@@ -1,0 +1,122 @@
+[
+  {
+    "id": "all",
+    "label": "All Products",
+    "title": "All Products",
+    "summary": "An overview of IPM security products and integrated systems for organizations that need CCTV, video management, access control, alarm, fire protection, and network infrastructure.",
+    "items": [
+      {"name": "IP Network Camera", "description": "Network-based surveillance cameras for enterprise sites.", "tag": "Surveillance"},
+      {"name": "DVMS Platform", "description": "Digital video management and recording platform.", "tag": "Video Management"},
+      {"name": "Access Control", "description": "Door control and identity verification systems.", "tag": "Smart Access"},
+      {"name": "Alarm & Fire", "description": "Intrusion and fire event protection systems.", "tag": "Incident Protection"}
+    ]
+  },
+  {
+    "id": "ip-cameras",
+    "label": "IP Cameras",
+    "title": "IP Network Camera System",
+    "summary": "IP surveillance cameras for enterprise monitoring, designed to connect with video recording systems and central control rooms.",
+    "items": [
+      {"name": "Fixed IP Camera", "description": "Reliable monitoring for standard security areas.", "tag": "Camera"},
+      {"name": "Dome Camera", "description": "Compact indoor surveillance camera.", "tag": "Indoor"},
+      {"name": "Bullet Camera", "description": "Long-body outdoor CCTV camera.", "tag": "Outdoor"},
+      {"name": "PTZ Camera", "description": "Pan, tilt, and zoom camera for critical locations.", "tag": "Control"}
+    ]
+  },
+  {
+    "id": "dvms",
+    "label": "DVMS",
+    "title": "Digital Video Management System",
+    "summary": "Video management and recording systems for organizations that need centralized control across multiple camera locations.",
+    "items": [
+      {"name": "Video Recording", "description": "Digital video recording and retention.", "tag": "Recording"},
+      {"name": "Monitoring Console", "description": "Centralized control room interface.", "tag": "Control Room"},
+      {"name": "Playback & Search", "description": "Search and review recorded footage.", "tag": "Investigation"},
+      {"name": "User Permission", "description": "Role-based access for operators.", "tag": "Security"}
+    ]
+  },
+  {
+    "id": "specialized-cameras",
+    "label": "Specialized Cameras",
+    "title": "Specialized Camera Solutions",
+    "summary": "Advanced camera solutions for thermal detection, multi-sensor coverage, night vision, and analytics-ready security applications.",
+    "items": [
+      {"name": "Thermal Camera", "description": "Heat detection for high-risk areas.", "tag": "Thermal"},
+      {"name": "Multi-Sensor Camera", "description": "Wide coverage through multiple sensors.", "tag": "Panoramic"},
+      {"name": "Night Vision Camera", "description": "Monitoring in low-light environments.", "tag": "Low Light"},
+      {"name": "Analytics Ready", "description": "Prepared for intelligent video analysis.", "tag": "AI Ready"}
+    ]
+  },
+  {
+    "id": "infrared-lights",
+    "label": "Infrared & Lights",
+    "title": "Infrared & Illumination",
+    "summary": "Infrared and lighting equipment that improves CCTV visibility in low-light and long-range environments.",
+    "items": [
+      {"name": "Infrared Illuminator", "description": "Enhances nighttime camera visibility.", "tag": "IR"},
+      {"name": "White Light", "description": "Supports color imaging and deterrence.", "tag": "Lighting"},
+      {"name": "Long Range Support", "description": "Designed for extended outdoor areas.", "tag": "Outdoor"},
+      {"name": "Camera Integration", "description": "Works with surveillance installation points.", "tag": "Integration"}
+    ]
+  },
+  {
+    "id": "wireless-video",
+    "label": "Wireless Video",
+    "title": "Wireless Video Transmission",
+    "summary": "Wireless video transmission for locations where cabling is difficult or long-distance CCTV connectivity is required.",
+    "items": [
+      {"name": "Point-to-Point Link", "description": "Video connection between fixed locations.", "tag": "Wireless"},
+      {"name": "Outdoor Transmission", "description": "Connectivity for external environments.", "tag": "Outdoor"},
+      {"name": "Remote Site CCTV", "description": "Surveillance for remote areas.", "tag": "Remote"},
+      {"name": "Stable Network Design", "description": "Designed for reliable transmission.", "tag": "Network"}
+    ]
+  },
+  {
+    "id": "access-control",
+    "label": "Access Control",
+    "title": "Access Control System",
+    "summary": "Enterprise access control systems supporting cards, FaceScan, biometrics, and time attendance workflows.",
+    "items": [
+      {"name": "Door Controller", "description": "Controls doors and access permissions.", "tag": "Door"},
+      {"name": "FaceScan", "description": "Face-based identity verification.", "tag": "Identity"},
+      {"name": "Biometrics", "description": "Fingerprint and biometric authentication.", "tag": "Biometric"},
+      {"name": "Time Attendance", "description": "Workforce time recording support.", "tag": "HR"}
+    ]
+  },
+  {
+    "id": "intrusion-alarm",
+    "label": "Intrusion Alarm",
+    "title": "Alarm & Intrusion Monitoring",
+    "summary": "Intrusion and abnormal-event alarm systems designed for centralized monitoring and fast response.",
+    "items": [
+      {"name": "Intrusion Sensor", "description": "Detects unauthorized access or movement.", "tag": "Sensor"},
+      {"name": "Alarm Panel", "description": "Central alarm control interface.", "tag": "Panel"},
+      {"name": "Incident Alert", "description": "Alerts operators to abnormal events.", "tag": "Alert"},
+      {"name": "24/7 Monitoring Ready", "description": "Designed for continuous monitoring.", "tag": "Monitoring"}
+    ]
+  },
+  {
+    "id": "fire-protection",
+    "label": "Fire Protection",
+    "title": "Fire Protection System",
+    "summary": "Fire detection and alarm systems for buildings and mission-critical areas.",
+    "items": [
+      {"name": "Smoke Detection", "description": "Detects smoke and fire-related risk.", "tag": "Detection"},
+      {"name": "Fire Alarm", "description": "Fire event alert and notification.", "tag": "Alarm"},
+      {"name": "Control Panel", "description": "Central fire alarm control panel.", "tag": "Panel"},
+      {"name": "Safety Integration", "description": "Connects with broader security systems.", "tag": "Integration"}
+    ]
+  },
+  {
+    "id": "network-it",
+    "label": "Network & IT",
+    "title": "Network & Computer Infrastructure",
+    "summary": "Network infrastructure, hardware, and software foundations that support secure enterprise security systems.",
+    "items": [
+      {"name": "Enterprise Network", "description": "Network infrastructure for organizations.", "tag": "Network"},
+      {"name": "Switching & Routing", "description": "Connectivity equipment for secure systems.", "tag": "Infrastructure"},
+      {"name": "Server & Storage", "description": "Supports video recording and data retention.", "tag": "Hardware"},
+      {"name": "Secure IT Design", "description": "Designed for reliability and security.", "tag": "Security"}
+    ]
+  }
+]

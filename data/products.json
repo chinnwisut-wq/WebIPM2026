@@ -1,0 +1,122 @@
+[
+  {
+    "id": "all",
+    "label": "All Products",
+    "title": "All Products",
+    "summary": "ภาพรวมสินค้าและระบบความปลอดภัยของ IPM สำหรับองค์กรที่ต้องการระบบครบวงจร ตั้งแต่กล้อง ระบบบันทึก Access Control ไปจนถึง Network Infrastructure",
+    "items": [
+      {"name": "IP Network Camera", "description": "กล้องวงจรปิดระบบเครือข่ายสำหรับองค์กร", "tag": "Surveillance"},
+      {"name": "DVMS Platform", "description": "ระบบจัดการและบันทึกวิดีโอดิจิตอล", "tag": "Video Management"},
+      {"name": "Access Control", "description": "ระบบควบคุมประตูและยืนยันตัวตน", "tag": "Smart Access"},
+      {"name": "Alarm & Fire", "description": "ระบบแจ้งเตือนภัยบุกรุกและเพลิงไหม้", "tag": "Incident Protection"}
+    ]
+  },
+  {
+    "id": "ip-cameras",
+    "label": "IP Cameras",
+    "title": "IP Network Camera System",
+    "summary": "กล้องวงจรปิด IP สำหรับงานเฝ้าระวังองค์กร รองรับการเชื่อมต่อกับระบบบันทึกและศูนย์ควบคุมกลาง",
+    "items": [
+      {"name": "Fixed IP Camera", "description": "กล้องประจำจุดสำหรับพื้นที่ทั่วไป", "tag": "Camera"},
+      {"name": "Dome Camera", "description": "กล้องโดมสำหรับพื้นที่ภายในอาคาร", "tag": "Indoor"},
+      {"name": "Bullet Camera", "description": "กล้องทรงยาวสำหรับพื้นที่ภายนอก", "tag": "Outdoor"},
+      {"name": "PTZ Camera", "description": "กล้องหมุนซูมสำหรับจุดสำคัญ", "tag": "Control"}
+    ]
+  },
+  {
+    "id": "dvms",
+    "label": "DVMS",
+    "title": "Digital Video Management System",
+    "summary": "ระบบบริหารจัดการวิดีโอและการบันทึกภาพสำหรับองค์กรที่ต้องการควบคุมกล้องหลายจุดอย่างเป็นระบบ",
+    "items": [
+      {"name": "Video Recording", "description": "ระบบบันทึกภาพดิจิตอล", "tag": "Recording"},
+      {"name": "Monitoring Console", "description": "หน้าจอควบคุมศูนย์กลาง", "tag": "Control Room"},
+      {"name": "Playback & Search", "description": "ค้นหาและตรวจสอบภาพย้อนหลัง", "tag": "Investigation"},
+      {"name": "User Permission", "description": "กำหนดสิทธิ์ผู้ใช้งาน", "tag": "Security"}
+    ]
+  },
+  {
+    "id": "specialized-cameras",
+    "label": "Specialized Cameras",
+    "title": "Specialized Camera Solutions",
+    "summary": "กล้องเฉพาะทางสำหรับงานความปลอดภัยขั้นสูง เช่น Thermal, Multi-Sensor และ Night Vision",
+    "items": [
+      {"name": "Thermal Camera", "description": "ตรวจจับความร้อนในพื้นที่เสี่ยง", "tag": "Thermal"},
+      {"name": "Multi-Sensor Camera", "description": "มุมมองกว้างหลายทิศทาง", "tag": "Panoramic"},
+      {"name": "Night Vision Camera", "description": "มองเห็นในสภาพแสงน้อย", "tag": "Low Light"},
+      {"name": "Analytics Ready", "description": "พร้อมต่อยอดระบบวิเคราะห์ภาพ", "tag": "AI Ready"}
+    ]
+  },
+  {
+    "id": "infrared-lights",
+    "label": "Infrared & Lights",
+    "title": "Infrared & Illumination",
+    "summary": "อุปกรณ์แสงสว่างและอินฟราเรดสำหรับเพิ่มประสิทธิภาพการมองเห็นของระบบกล้องวงจรปิด",
+    "items": [
+      {"name": "Infrared Illuminator", "description": "เพิ่มระยะมองเห็นกลางคืน", "tag": "IR"},
+      {"name": "White Light", "description": "แสงช่วยเตือนและบันทึกภาพสี", "tag": "Lighting"},
+      {"name": "Long Range Support", "description": "รองรับพื้นที่ระยะไกล", "tag": "Outdoor"},
+      {"name": "Camera Integration", "description": "เชื่อมกับจุดติดตั้งกล้อง", "tag": "Integration"}
+    ]
+  },
+  {
+    "id": "wireless-video",
+    "label": "Wireless Video",
+    "title": "Wireless Video Transmission",
+    "summary": "ระบบส่งสัญญาณวิดีโอไร้สายสำหรับพื้นที่ที่เดินสายยากหรือจำเป็นต้องเชื่อมต่อระยะไกล",
+    "items": [
+      {"name": "Point-to-Point Link", "description": "เชื่อมต่อภาพระหว่างจุด", "tag": "Wireless"},
+      {"name": "Outdoor Transmission", "description": "รองรับงานภายนอกอาคาร", "tag": "Outdoor"},
+      {"name": "Remote Site CCTV", "description": "กล้องพื้นที่ห่างไกล", "tag": "Remote"},
+      {"name": "Stable Network Design", "description": "ออกแบบสัญญาณให้เสถียร", "tag": "Network"}
+    ]
+  },
+  {
+    "id": "access-control",
+    "label": "Access Control",
+    "title": "Access Control System",
+    "summary": "ระบบควบคุมการเข้า-ออกสำหรับองค์กร รองรับบัตร ใบหน้า Biometrics และการบันทึกเวลา",
+    "items": [
+      {"name": "Door Controller", "description": "ควบคุมประตูและสิทธิ์เข้า-ออก", "tag": "Door"},
+      {"name": "FaceScan", "description": "ยืนยันตัวตนด้วยใบหน้า", "tag": "Identity"},
+      {"name": "Biometrics", "description": "รองรับลายนิ้วมือและข้อมูลชีวมิติ", "tag": "Biometric"},
+      {"name": "Time Attendance", "description": "ระบบบันทึกเวลาองค์กร", "tag": "HR"}
+    ]
+  },
+  {
+    "id": "intrusion-alarm",
+    "label": "Intrusion Alarm",
+    "title": "Alarm & Intrusion Monitoring",
+    "summary": "ระบบแจ้งเตือนภัยบุกรุกและเหตุผิดปกติ พร้อมแนวทางเชื่อมต่อศูนย์ควบคุมกลาง",
+    "items": [
+      {"name": "Intrusion Sensor", "description": "ตรวจจับการบุกรุก", "tag": "Sensor"},
+      {"name": "Alarm Panel", "description": "ควบคุมสัญญาณเตือน", "tag": "Panel"},
+      {"name": "Incident Alert", "description": "แจ้งเตือนเหตุผิดปกติ", "tag": "Alert"},
+      {"name": "24/7 Monitoring Ready", "description": "ออกแบบเพื่อเฝ้าระวังต่อเนื่อง", "tag": "Monitoring"}
+    ]
+  },
+  {
+    "id": "fire-protection",
+    "label": "Fire Protection",
+    "title": "Fire Protection System",
+    "summary": "ระบบป้องกันและแจ้งเตือนเพลิงไหม้สำหรับอาคารและพื้นที่สำคัญ",
+    "items": [
+      {"name": "Smoke Detection", "description": "ตรวจจับควันและความผิดปกติ", "tag": "Detection"},
+      {"name": "Fire Alarm", "description": "แจ้งเตือนเหตุเพลิงไหม้", "tag": "Alarm"},
+      {"name": "Control Panel", "description": "ศูนย์ควบคุมระบบแจ้งเหตุ", "tag": "Panel"},
+      {"name": "Safety Integration", "description": "เชื่อมต่อกับระบบความปลอดภัยอื่น", "tag": "Integration"}
+    ]
+  },
+  {
+    "id": "network-it",
+    "label": "Network & IT",
+    "title": "Network & Computer Infrastructure",
+    "summary": "โครงสร้างพื้นฐานเครือข่าย ฮาร์ดแวร์ และซอฟต์แวร์ที่รองรับระบบรักษาความปลอดภัยองค์กร",
+    "items": [
+      {"name": "Enterprise Network", "description": "ระบบเครือข่ายองค์กร", "tag": "Network"},
+      {"name": "Switching & Routing", "description": "อุปกรณ์เชื่อมต่อระบบ", "tag": "Infrastructure"},
+      {"name": "Server & Storage", "description": "รองรับระบบบันทึกและจัดเก็บข้อมูล", "tag": "Hardware"},
+      {"name": "Secure IT Design", "description": "ออกแบบให้เสถียรและปลอดภัย", "tag": "Security"}
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+chrome-profile/
+chrome-profile2/
+edge-profile/
+__pycache__/
+assets/logoNew.png
+*.tmp
+site-preview.png
+node_modules/
