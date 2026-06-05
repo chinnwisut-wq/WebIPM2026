@@ -1,5 +1,5 @@
 :root {
-  --red: #ee1b24;
+  --red: #e8292d;
   --red-dark: #c91219;
   --ink: #17202a;
   --muted: #657181;
@@ -131,7 +131,7 @@ textarea {
 .primary-action {
   color: #fff;
   background: var(--red);
-  box-shadow: 0 12px 26px rgba(238, 27, 36, .28);
+  box-shadow: 0 12px 26px rgba(232, 41, 45, .28);
 }
 
 .secondary-action,
@@ -455,7 +455,7 @@ textarea {
   height: 52px;
   border-radius: 12px;
   background-color: #fff;
-  box-shadow: 0 10px 24px rgba(238, 27, 36, .18);
+  box-shadow: 0 10px 24px rgba(232, 41, 45, .18);
 }
 
 .camera {
@@ -529,7 +529,7 @@ textarea {
   border-radius: 24px;
   background:
     radial-gradient(circle at center, rgba(14, 165, 233, .18), transparent 35%),
-    radial-gradient(circle at 50% 50%, rgba(238, 27, 36, .08), transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(232, 41, 45, .08), transparent 50%),
     linear-gradient(180deg, #fff, #f8fafc);
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -546,7 +546,7 @@ textarea {
 
 .system-map::after {
   inset: 140px 220px;
-  border-color: rgba(238, 27, 36, .15);
+  border-color: rgba(232, 41, 45, .15);
   transform: rotate(-7deg);
 }
 
@@ -566,7 +566,7 @@ textarea {
   border: 1px solid rgba(120, 205, 255, .34);
   background:
     radial-gradient(circle at 30% 24%, rgba(110, 205, 255, .52), rgba(21, 95, 156, .2) 30%, transparent 50%),
-    radial-gradient(circle at 75% 82%, rgba(238, 27, 36, .24), transparent 40%),
+    radial-gradient(circle at 75% 82%, rgba(232, 41, 45, .24), transparent 40%),
     linear-gradient(145deg, #0b7fc0 0%, #083f72 46%, #061423 100%);
   box-shadow:
     0 30px 78px rgba(7, 18, 31, .34),
@@ -637,7 +637,7 @@ textarea {
   border-radius: 20px;
   background-color: #fff0f1;
   background-size: 48px 40px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), 0 16px 32px rgba(238, 27, 36, .12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), 0 16px 32px rgba(232, 41, 45, .12);
 }
 
 .map-node h3,
@@ -703,7 +703,7 @@ textarea {
   margin: 0 auto 8px;
   border-radius: 22px;
   background-size: 54px 46px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), 0 18px 36px rgba(238, 27, 36, .14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), 0 18px 36px rgba(232, 41, 45, .14);
 }
 
 .service-card strong {

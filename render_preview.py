@@ -5,7 +5,7 @@ ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "mockup-preview.png"
 
 W, H = 1440, 1800
-RED = (238, 27, 36)
+RED = (232, 41, 45)
 BLUE = (13, 95, 158)
 CYAN = (14, 165, 233)
 NAVY = (7, 21, 35)
