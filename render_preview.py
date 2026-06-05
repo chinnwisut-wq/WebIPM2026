@@ -106,25 +106,26 @@ text(draw, (1185, 60), "ปรึกษาระบบ", F14, WHITE, "mm")
 
 text(draw, (170, 210), "IPM Technovation Since 1995", F14, WHITE)
 text(draw, (170, 270), "ยกระดับความปลอดภัยองค์กร", F46B, WHITE)
-text(draw, (170, 326), "ด้วยระบบอัจฉริยะครบวงจร โดย IPM", F46B, WHITE)
-text(draw, (170, 400), "ออกแบบ ติดตั้ง และดูแลระบบ CCTV, Access Control, Alarm และ Network", F18, (230, 238, 247))
-text(draw, (170, 432), "ด้วยความเชี่ยวชาญกว่า 30 ปี", F18, (230, 238, 247))
-rounded(draw, (170, 490, 315, 538), 10, RED)
-text(draw, (242, 514), "ดูภาพรวมระบบ", F14, WHITE, "mm")
-rounded(draw, (330, 490, 465, 538), 10, (255, 255, 255, 22), (255, 255, 255))
-text(draw, (397, 514), "บริการของเรา", F14, WHITE, "mm")
+text(draw, (170, 326), "ด้วยระบบอัจฉริยะครบวงจร", F46B, WHITE)
+text(draw, (170, 382), "โดย IPM", F46B, WHITE)
+text(draw, (170, 452), "ออกแบบ ติดตั้ง และดูแลระบบ CCTV, Access Control, Alarm และ Network Security", F18, (230, 238, 247))
+text(draw, (170, 484), "ด้วยความเชี่ยวชาญกว่า 30 ปี", F18, (230, 238, 247))
+rounded(draw, (170, 535, 315, 583), 10, RED)
+text(draw, (242, 559), "ดูภาพรวมระบบ", F14, WHITE, "mm")
+rounded(draw, (330, 535, 465, 583), 10, (255, 255, 255, 22), (255, 255, 255))
+text(draw, (397, 559), "บริการของเรา", F14, WHITE, "mm")
 
-rounded(draw, (1050, 160, 1320, 310), 16, (8, 19, 33), (90, 126, 154))
-text(draw, (1070, 184), "Status", F12, (210, 226, 238))
-text(draw, (1250, 184), "Integrated Security", F14, WHITE, "mm")
+rounded(draw, (1050, 230, 1320, 380), 16, (8, 19, 33), (90, 126, 154))
+text(draw, (1070, 254), "Status", F12, (210, 226, 238))
+text(draw, (1250, 254), "Integrated Security", F14, WHITE, "mm")
 for i, label in enumerate(["CCTV Monitoring & AI", "Smart Access Control", "Intrusion & Fire Alarm", "Secure Enterprise Network"]):
-    y = 214 + i * 34
+    y = 284 + i * 34
     fill = (17, 82, 118) if i == 0 else (21, 38, 56)
     rounded(draw, (1070, y, 1300, y + 26), 10, fill)
     draw.ellipse((1080, y + 9, 1088, y + 17), fill=(74, 222, 128) if i != 2 else (250, 204, 21))
     text(draw, (1098, y + 5), label, F12, WHITE)
 
-for i, (kind, title, sub) in enumerate([("camera", "CCTV", "Monitoring & AI"), ("access", "Access", "Smart Control"), ("network", "Network", "Infrastructure")]):
+for i, (kind, title, sub) in enumerate([("camera", "CCTV", "Monitoring & AI"), ("access", "Access", "Smart Control"), ("network", "Network Security", "Infrastructure")]):
     x = 370 + i * 245
     rounded(draw, (x, 600, x + 220, 686), 16, (8, 19, 33), (90, 126, 154))
     small_icon(draw, x + 18, 620, kind)
@@ -132,8 +133,8 @@ for i, (kind, title, sub) in enumerate([("camera", "CCTV", "Monitoring & AI"), (
     text(draw, (x + 76, 652), sub, F14, (188, 205, 220))
 
 draw.rectangle((0, 720, W, H), fill=WHITE)
-text(draw, (W // 2, 790), "Integrated Security Platform", F14, RED, "mm")
-text(draw, (W // 2, 832), "เห็นภาพระบบก่อนอ่านรายละเอียด", F32B, INK, "mm")
+text(draw, (W // 2, 790), "System Connection Overview", F14, RED, "mm")
+text(draw, (W // 2, 832), "ภาพรวมการเชื่อมต่อระบบความปลอดภัย", F32B, INK, "mm")
 
 rounded(draw, (120, 900, 1320, 1240), 24, (249, 251, 253), LINE)
 draw.ellipse((570, 950, 810, 1190), fill=BLUE, outline=(122, 205, 255), width=2)
@@ -141,10 +142,10 @@ img.paste(logo, (650, 1034), logo)
 text(draw, (690, 1100), "Monitoring", F16, (230, 240, 250), "mm")
 text(draw, (690, 1130), "Control Center", F24B, WHITE, "mm")
 nodes = [
-    ("camera", "AI Video Surveillance", "กล้อง, DVMS, Thermal", 190, 930),
+    ("camera", "CCTV Monitoring & AI", "กล้อง, DVMS, Thermal", 190, 930),
     ("access", "Smart Access Control", "FaceScan, Biometrics", 990, 940),
     ("alarm", "Incident Management", "Alarm & Fire", 230, 1120),
-    ("network", "Unified Network", "Network Infrastructure", 960, 1120),
+    ("network", "Unified Network Security", "Network Infrastructure", 960, 1120),
 ]
 for kind, title, sub, x, y in nodes:
     rounded(draw, (x, y, x + 260, y + 118), 18, WHITE, LINE)
