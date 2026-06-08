@@ -272,7 +272,10 @@ function setupServiceModal() {
   };
 
   document.querySelectorAll("[data-service-image]").forEach((card) => {
-    card.addEventListener("click", () => openModal(card));
+    card.addEventListener("click", (event) => {
+      event.preventDefault();
+      openModal(card);
+    });
     card.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
@@ -296,8 +299,8 @@ async function init() {
   setupContactForm();
   setupSystemCarousel();
   setupServiceModal();
-  const productPath = lang === "en" ? "data/products-en.json?v=20260608d" : "data/products.json?v=20260608d";
-  const newsPath = lang === "en" ? "data/news-en.json?v=20260608d" : "data/news.json?v=20260608d";
+  const productPath = lang === "en" ? "data/products-en.json?v=20260608e" : "data/products.json?v=20260608e";
+  const newsPath = lang === "en" ? "data/news-en.json?v=20260608e" : "data/news.json?v=20260608e";
   const [products, news] = await Promise.all([
     loadJson(productPath, fallbackProducts),
     loadJson(newsPath, lang === "en" ? fallbackNewsEn : fallbackNews)
