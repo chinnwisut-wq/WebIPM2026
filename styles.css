@@ -526,8 +526,8 @@ textarea {
 .section {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 68px 0;
-  scroll-margin-top: 94px;
+  padding: 52px 0 64px;
+  scroll-margin-top: 82px;
   min-width: 0;
 }
 
@@ -585,7 +585,7 @@ textarea {
 }
 
 .system-section {
-  padding-top: 38px;
+  padding-top: 28px;
 }
 
 .system-section .section-heading {
@@ -970,7 +970,7 @@ textarea {
 }
 
 .services-section {
-  padding-top: 34px;
+  padding-top: 24px;
 }
 
 .service-grid {
@@ -1112,11 +1112,11 @@ body.modal-open {
 .products-section {
   width: 100%;
   max-width: none;
-  padding: 68px max(20px, calc((100vw - 1180px) / 2));
+  padding: 42px max(20px, calc((100vw - 1180px) / 2)) 68px;
   background:
     linear-gradient(180deg, #eef7fb 0%, #f7fbff 100%);
   border-radius: 42px 42px 0 0;
-  scroll-margin-top: 94px;
+  scroll-margin-top: 82px;
 }
 
 .filter-bar {
@@ -1504,8 +1504,8 @@ body.modal-open {
 .contact-section {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto 80px;
-  padding: 58px 0 0;
-  scroll-margin-top: 94px;
+  padding: 42px 0 0;
+  scroll-margin-top: 82px;
 }
 
 .contact-heading {
@@ -1836,6 +1836,11 @@ body.modal-open {
   .section,
   .contact-section {
     width: calc(100% - 28px);
+  }
+
+  .section,
+  .contact-section {
+    scroll-margin-top: 118px;
   }
 
   .hero {
