@@ -526,8 +526,8 @@ textarea {
 .section {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 86px 0;
-  scroll-margin-top: 122px;
+  padding: 68px 0;
+  scroll-margin-top: 94px;
   min-width: 0;
 }
 
@@ -584,7 +584,7 @@ textarea {
 }
 
 .system-section {
-  padding-top: 54px;
+  padding-top: 38px;
 }
 
 .system-section .section-heading {
@@ -975,7 +975,7 @@ textarea {
 }
 
 .services-section {
-  padding-top: 52px;
+  padding-top: 34px;
 }
 
 .service-grid {
@@ -1117,11 +1117,11 @@ body.modal-open {
 .products-section {
   width: 100%;
   max-width: none;
-  padding: 86px max(20px, calc((100vw - 1180px) / 2));
+  padding: 68px max(20px, calc((100vw - 1180px) / 2));
   background:
     linear-gradient(180deg, #eef7fb 0%, #f7fbff 100%);
   border-radius: 42px 42px 0 0;
-  scroll-margin-top: 122px;
+  scroll-margin-top: 94px;
 }
 
 .filter-bar {
@@ -1499,8 +1499,8 @@ body.modal-open {
 .contact-section {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto 80px;
-  padding: 78px 0 0;
-  scroll-margin-top: 122px;
+  padding: 58px 0 0;
+  scroll-margin-top: 94px;
 }
 
 .contact-heading {

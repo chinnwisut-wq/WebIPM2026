@@ -299,8 +299,8 @@ async function init() {
   setupContactForm();
   setupSystemCarousel();
   setupServiceModal();
-  const productPath = lang === "en" ? "data/products-en.json?v=20260608f" : "data/products.json?v=20260608f";
-  const newsPath = lang === "en" ? "data/news-en.json?v=20260608f" : "data/news.json?v=20260608f";
+  const productPath = lang === "en" ? "data/products-en.json?v=20260608g" : "data/products.json?v=20260608g";
+  const newsPath = lang === "en" ? "data/news-en.json?v=20260608g" : "data/news.json?v=20260608g";
   const [products, news] = await Promise.all([
     loadJson(productPath, fallbackProducts),
     loadJson(newsPath, lang === "en" ? fallbackNewsEn : fallbackNews)
