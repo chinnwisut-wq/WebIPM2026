@@ -236,8 +236,8 @@ textarea {
   left: 0;
   right: 0;
   bottom: -1px;
-  height: 210px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .09) 25%, rgba(255, 255, 255, .36) 56%, rgba(255, 255, 255, .78) 82%, #fff 100%);
+  height: 185px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .07) 28%, rgba(255, 255, 255, .28) 58%, rgba(255, 255, 255, .75) 84%, #fff 100%);
   pointer-events: none;
 }
 
@@ -251,6 +251,9 @@ textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(1.09) contrast(1.1) saturate(1.08);
+  transform: translateZ(0) scale(1.006);
+  transform-origin: center;
 }
 
 .hero-bg::after {
@@ -258,8 +261,9 @@ textarea {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(5, 18, 32, .94), rgba(6, 31, 52, .64) 58%, rgba(5, 22, 36, .22)),
-    linear-gradient(0deg, rgba(5, 19, 33, .68), rgba(6, 40, 63, .12) 58%);
+    linear-gradient(90deg, rgba(4, 15, 27, .91) 0%, rgba(6, 29, 49, .58) 46%, rgba(5, 22, 36, .16) 78%, rgba(5, 22, 36, .08) 100%),
+    radial-gradient(circle at 76% 30%, rgba(42, 191, 229, .16), rgba(42, 191, 229, 0) 38%),
+    linear-gradient(0deg, rgba(5, 19, 33, .54), rgba(6, 40, 63, .08) 58%);
 }
 
 .hero-content {
@@ -1485,6 +1489,10 @@ textarea {
     overflow-wrap: anywhere;
   }
 
+  .mobile-break {
+    display: inline;
+  }
+
   .hero-title-en {
     font-size: 34px;
   }
@@ -1636,10 +1644,6 @@ textarea {
   .hero-title-en {
     font-size: 28px;
     line-height: 1.24;
-  }
-
-  .mobile-break {
-    display: block;
   }
 
   .hero-title-en span {
