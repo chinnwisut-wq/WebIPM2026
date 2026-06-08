@@ -55,21 +55,21 @@ textarea {
 .site-header {
   position: fixed;
   z-index: 20;
-  top: 18px;
+  top: 16px;
   left: 50%;
-  width: min(1160px, calc(100% - 32px));
-  min-height: 84px;
+  width: min(1088px, calc(100% - 40px));
+  min-height: 68px;
   display: grid;
-  grid-template-columns: 230px 1fr auto;
+  grid-template-columns: 190px 1fr auto;
   align-items: center;
-  gap: 18px;
-  padding: 8px 12px 8px 22px;
-  border: 1px solid rgba(203, 224, 238, .78);
+  gap: 22px;
+  padding: 7px 10px 7px 18px;
+  border: 1px solid rgba(211, 232, 244, .54);
   border-radius: 16px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, .94), rgba(241, 248, 252, .88));
-  box-shadow: 0 18px 56px rgba(5, 24, 42, .16);
-  backdrop-filter: blur(18px);
+    linear-gradient(135deg, rgba(255, 255, 255, .72), rgba(232, 246, 252, .44));
+  box-shadow: 0 14px 42px rgba(5, 24, 42, .14);
+  backdrop-filter: blur(20px) saturate(1.25);
   transform: translateX(-50%);
 }
 
@@ -81,8 +81,8 @@ textarea {
 .brand img {
   display: block;
   width: auto;
-  height: 70px;
-  max-width: 190px;
+  height: 56px;
+  max-width: 156px;
   object-fit: contain;
 }
 
@@ -90,15 +90,16 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 28px;
+  gap: 36px;
   color: #263b51;
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 780;
+  letter-spacing: .01em;
 }
 
 .nav-links a {
   position: relative;
-  padding: 12px 0;
+  padding: 9px 0;
   white-space: nowrap;
 }
 
@@ -125,18 +126,18 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 12px;
+  gap: 10px;
 }
 
 .quote-button,
 .primary-action,
 .secondary-action,
 .secondary-light {
-  min-height: 46px;
+  min-height: 42px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 18px;
+  padding: 0 16px;
   border: 0;
   border-radius: 10px;
   font-size: 15px;
@@ -166,15 +167,15 @@ textarea {
 }
 
 .language-switch {
-  min-height: 42px;
+  min-height: 38px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 0 12px;
+  padding: 0 10px;
   border: 1px solid var(--line);
   border-radius: 10px;
   color: #263b51;
-  background: rgba(255, 255, 255, .88);
+  background: rgba(255, 255, 255, .68);
   font-size: 14px;
   font-weight: 700;
   box-shadow: 0 8px 22px rgba(15, 23, 42, .06);
@@ -1333,11 +1334,13 @@ textarea {
     top: 12px;
     grid-template-columns: minmax(0, 1fr) auto;
     row-gap: 6px;
+    width: calc(100% - 32px);
+    min-height: 0;
   }
 
   .brand img {
-    height: 56px;
-    max-width: 150px;
+    height: 52px;
+    max-width: 144px;
   }
 
   .nav-links {
@@ -1345,7 +1348,8 @@ textarea {
     grid-column: 1 / -1;
     justify-content: flex-start;
     width: 100%;
-    gap: 6px 18px;
+    gap: 6px 22px;
+    font-size: 15px;
     overflow: visible;
   }
 
@@ -1440,18 +1444,18 @@ textarea {
     width: calc(100% - 20px);
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 6px 8px;
-    padding: 10px;
+    padding: 8px 10px;
     border-radius: 14px;
   }
 
   .brand img {
-    height: 48px;
-    max-width: 128px;
+    height: 42px;
+    max-width: 118px;
   }
 
   .nav-links {
-    gap: 4px 12px;
-    font-size: 13px;
+    gap: 4px 14px;
+    font-size: 13.5px;
   }
 
   .nav-links a {
@@ -1463,9 +1467,9 @@ textarea {
   }
 
   .language-switch {
-    min-height: 38px;
+    min-height: 34px;
     gap: 6px;
-    padding: 0 9px;
+    padding: 0 8px;
     font-size: 13px;
   }
 
@@ -1613,17 +1617,17 @@ textarea {
   }
 
   .brand img {
-    height: 44px;
-    max-width: 118px;
+    height: 40px;
+    max-width: 112px;
   }
 
   .nav-links {
-    gap: 3px 10px;
-    font-size: 12.5px;
+    gap: 3px 11px;
+    font-size: 12.8px;
   }
 
   .language-switch {
-    min-height: 36px;
+    min-height: 34px;
     padding: 0 8px;
   }
 
