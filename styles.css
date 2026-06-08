@@ -583,6 +583,34 @@ textarea {
   max-width: 720px;
 }
 
+.system-section {
+  padding-top: 54px;
+}
+
+.system-section .section-heading {
+  max-width: none;
+  margin-bottom: 22px;
+}
+
+.system-section .section-heading span {
+  font-size: 12px;
+}
+
+.system-section .section-heading h2 {
+  margin-top: 6px;
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.12;
+  white-space: nowrap;
+}
+
+.system-section .section-heading p {
+  max-width: none;
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.55;
+  white-space: nowrap;
+}
+
 .system-map {
   position: relative;
   min-height: 650px;
@@ -1650,6 +1678,19 @@ body.modal-open {
     padding-bottom: 44px;
   }
 
+  .system-section {
+    padding-top: 48px;
+  }
+
+  .system-section .section-heading h2,
+  .system-section .section-heading p {
+    white-space: normal;
+  }
+
+  .system-section .section-heading p {
+    max-width: 720px;
+  }
+
   .status-panel {
     position: relative;
     inset: auto;
@@ -1792,6 +1833,23 @@ body.modal-open {
   .hero {
     padding-top: 156px;
     padding-bottom: 32px;
+  }
+
+  .system-section {
+    padding-top: 38px;
+  }
+
+  .system-section .section-heading {
+    margin-bottom: 16px;
+  }
+
+  .system-section .section-heading h2 {
+    font-size: 26px;
+  }
+
+  .system-section .section-heading p {
+    font-size: 14px;
+    line-height: 1.55;
   }
 
   .hero h1 {
