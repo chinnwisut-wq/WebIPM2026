@@ -293,12 +293,149 @@ function setupServiceModal() {
   });
 }
 
+function setupChatAssistant(lang) {
+  const root = document.querySelector("[data-chat-assistant]");
+  if (!root) return;
+
+  const copy = {
+    th: {
+      title: "IPM Assistant",
+      subtitle: "ปรึกษาระบบงานเบื้องต้น",
+      toggle: "สอบถาม IPM",
+      close: "ปิดแชท",
+      intro: "สวัสดีครับ IPM พร้อมช่วยสรุปข้อมูลบริการเบื้องต้น และเชื่อมต่อทีมงานเพื่อปรึกษาระบบงาน",
+      actions: [
+        { label: "โทรหา IPM", href: "tel:+6625311891" },
+        { label: "ส่งอีเมล", href: "mailto:info@ipm.co.th" },
+        { label: "ฟอร์มติดต่อ", href: "#contact" }
+      ],
+      topics: [
+        {
+          label: "CCTV / VMS",
+          answer: "IPM ให้บริการระบบกล้องวงจรปิด, IP Camera, VMS/DVMS, Video Wall, AI Video Analytics และการเชื่อมต่อศูนย์ควบคุมกลาง"
+        },
+        {
+          label: "Access Control",
+          answer: "รองรับระบบควบคุมประตู, Face Recognition, Biometrics, Visitor Management และระบบบันทึกเวลาในองค์กร"
+        },
+        {
+          label: "AI Alerts / AIOC",
+          answer: "รองรับการตรวจจับเหตุการณ์ เช่น ใบหน้า ยานพาหนะ ป้ายทะเบียน ความเร็ว อาวุธ น้ำท่วม และภัยคุกคามอื่น ๆ ผ่าน Dashboard และศูนย์ควบคุม"
+        },
+        {
+          label: "Network / IT",
+          answer: "ให้บริการโครงสร้างพื้นฐาน Network, Server, Storage, Monitoring, Backup และระบบรักษาความปลอดภัยเครือข่ายสำหรับองค์กร"
+        },
+        {
+          label: "ขอใบเสนอราคา",
+          answer: "กรุณาเตรียมข้อมูลพื้นที่ติดตั้ง จำนวนจุดกล้อง/ประตู ระบบเดิมที่มี และช่องทางติดต่อ จากนั้นส่งผ่านฟอร์มหรืออีเมล info@ipm.co.th"
+        }
+      ]
+    },
+    en: {
+      title: "IPM Assistant",
+      subtitle: "Quick system consultation",
+      toggle: "Ask IPM",
+      close: "Close chat",
+      intro: "Hello. IPM can help summarize core services and connect you with the team for system consultation.",
+      actions: [
+        { label: "Call IPM", href: "tel:+6625311891" },
+        { label: "Email", href: "mailto:info@ipm.co.th" },
+        { label: "Contact Form", href: "#contact" }
+      ],
+      topics: [
+        {
+          label: "CCTV / VMS",
+          answer: "IPM provides CCTV, IP cameras, VMS/DVMS, video wall, AI video analytics, and centralized control center integration."
+        },
+        {
+          label: "Access Control",
+          answer: "We support door access control, face recognition, biometrics, visitor management, and attendance workflows."
+        },
+        {
+          label: "AI Alerts / AIOC",
+          answer: "AI monitoring can detect faces, vehicles, license plates, speed, weapons, flooding, and other threats through dashboards and control rooms."
+        },
+        {
+          label: "Network / IT",
+          answer: "IPM supports enterprise network infrastructure, servers, storage, monitoring, backup, and secure connectivity."
+        },
+        {
+          label: "Request Quote",
+          answer: "Please prepare site details, camera/door counts, existing systems, and contact information, then send them through the form or info@ipm.co.th."
+        }
+      ]
+    }
+  }[lang];
+
+  root.innerHTML = `
+    <button class="chat-toggle" type="button" aria-expanded="false" aria-controls="ipm-chat-panel">
+      <span class="chat-toggle-icon" aria-hidden="true"></span>
+      <span>${copy.toggle}</span>
+    </button>
+    <section class="chat-panel" id="ipm-chat-panel" hidden aria-label="${copy.title}">
+      <div class="chat-head">
+        <div>
+          <strong>${copy.title}</strong>
+          <span>${copy.subtitle}</span>
+        </div>
+        <button class="chat-close" type="button" aria-label="${copy.close}">×</button>
+      </div>
+      <div class="chat-body" data-chat-body>
+        <div class="chat-message bot">${copy.intro}</div>
+        <div class="chat-topics">
+          ${copy.topics.map((topic, index) => `<button type="button" data-chat-topic="${index}">${topic.label}</button>`).join("")}
+        </div>
+      </div>
+      <div class="chat-actions">
+        ${copy.actions.map((action) => `<a href="${action.href}">${action.label}</a>`).join("")}
+      </div>
+    </section>
+  `;
+
+  const toggle = root.querySelector(".chat-toggle");
+  const panel = root.querySelector(".chat-panel");
+  const close = root.querySelector(".chat-close");
+  const body = root.querySelector("[data-chat-body]");
+
+  const setOpen = (isOpen) => {
+    panel.hidden = !isOpen;
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    root.classList.toggle("is-open", isOpen);
+    if (isOpen) close.focus();
+  };
+
+  toggle.addEventListener("click", () => setOpen(panel.hidden));
+  close.addEventListener("click", () => setOpen(false));
+
+  root.querySelectorAll("[data-chat-topic]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const topic = copy.topics[Number(button.dataset.chatTopic)];
+      if (!topic) return;
+      body.querySelectorAll(".chat-message.answer").forEach((message) => message.remove());
+      const question = document.createElement("div");
+      question.className = "chat-message user answer";
+      question.textContent = topic.label;
+      const answer = document.createElement("div");
+      answer.className = "chat-message bot answer";
+      answer.textContent = topic.answer;
+      body.append(question, answer);
+      answer.scrollIntoView({ block: "nearest" });
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !panel.hidden) setOpen(false);
+  });
+}
+
 async function init() {
   const lang = document.documentElement.lang === "en" ? "en" : "th";
   setupLanguageToggle();
   setupContactForm();
   setupSystemCarousel();
   setupServiceModal();
+  setupChatAssistant(lang);
   const productPath = lang === "en" ? "data/products-en.json?v=20260608g" : "data/products.json?v=20260608g";
   const newsPath = lang === "en" ? "data/news-en.json?v=20260608g" : "data/news.json?v=20260608g";
   const [products, news] = await Promise.all([
