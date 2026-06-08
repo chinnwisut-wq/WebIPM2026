@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260608b">
-  <script src="scripts/main.js?v=20260608b" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260608d">
+  <script src="scripts/main.js?v=20260608d" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -111,6 +111,46 @@
           <p>Network, hardware, and software infrastructure for secure operations.</p>
         </article>
       </div>
+      <div class="system-gallery" data-system-carousel aria-label="IPM system overview slides">
+        <div class="system-gallery-head">
+          <div>
+            <span>Integrated Visual Overview</span>
+            <h3>IPM System and Solution Overview</h3>
+          </div>
+          <a class="profile-button" href="assets/profile/companyP.png" target="_blank" rel="noreferrer">Company Profile</a>
+        </div>
+        <div class="system-frame">
+        <div class="system-track">
+          <figure class="system-slide"><img src="assets/system/systemmain.png" alt="System main overview" loading="lazy"></figure>
+          <figure class="system-slide"><img src="assets/system/CCTV-soft.png" alt="CCTV and video management system structure" loading="lazy"></figure>
+          <figure class="system-slide"><img src="assets/system/deployS.png" alt="Deployment scope overview" loading="lazy"></figure>
+          <figure class="system-slide"><img src="assets/system/integrated.png" alt="Integrated smart security solution" loading="lazy"></figure>
+          <figure class="system-slide"><img src="assets/system/smartS.png" alt="Smart security ecosystem" loading="lazy"></figure>
+          <figure class="system-slide"><img src="assets/system/aioc.png" alt="AI Operation Center platform" loading="lazy"></figure>
+          <figure class="system-slide"><img src="assets/system/chartaccess.png" alt="Identity and access management" loading="lazy"></figure>
+          <figure class="system-slide"><img src="assets/system/chartinfar.png" alt="Mobility operations and infrastructure" loading="lazy"></figure>
+          <figure class="system-slide"><img src="assets/system/chartV.png" alt="Surveillance and video management" loading="lazy"></figure>
+          <figure class="system-slide"><img src="assets/system/integratedP.png" alt="Integrated security portfolio" loading="lazy"></figure>
+        </div>
+        </div>
+      </div>
+
+      <article id="company-profile" class="profile-overview">
+        <div class="profile-copy">
+          <span>Security Systems Integrator Since 1995</span>
+          <h3>IPM Technovation Company Limited</h3>
+          <p>IPM specializes in design, installation, and integration of complete security systems. With more than 30 years of experience, IPM applies high-quality technology, devices, and software to build secure, modern, connected, and scalable systems for enterprise growth.</p>
+          <ul>
+            <li>Integrated Smart Security Solution for enterprise environments.</li>
+            <li>AIOC, CCTV analytics, face recognition, LPR, access control, drone, IoT, E-map, dashboard, and reporting.</li>
+            <li>Open platform architecture for flexible integration and future expansion.</li>
+          </ul>
+        </div>
+        <a class="profile-image-link" href="assets/profile/companyP.png" target="_blank" rel="noreferrer" aria-label="Open Company Profile">
+          <img src="assets/profile/companyP.png" alt="IPM Company Profile Overview" loading="lazy">
+          <span>Details</span>
+        </a>
+      </article>
     </section>
 
     <section id="services" class="section services-section">
@@ -120,31 +160,31 @@
         <p>From system design and product selection to installation and maintenance, IPM delivers turnkey security solutions for professional environments.</p>
       </div>
       <div class="service-grid">
-        <article class="service-card">
+        <article class="service-card" role="button" tabindex="0" data-service-image="assets/services/IntelligentVideo.png" data-service-title="Intelligent Video Surveillance">
           <span class="node-icon camera"></span>
           <h3>Intelligent Video Surveillance</h3>
           <strong>CCTV and Video Management</strong>
           <p>CCTV, IP network cameras, digital video management systems (DVMS), and thermal cameras.</p>
         </article>
-        <article class="service-card">
+        <article class="service-card" role="button" tabindex="0" data-service-image="assets/services/Identity.png" data-service-title="Identity & Smart Access">
           <span class="node-icon access"></span>
           <h3>Identity & Smart Access</h3>
           <strong>Access Control System</strong>
           <p>Door control, FaceScan, biometrics, card access, and time attendance systems.</p>
         </article>
-        <article class="service-card">
+        <article class="service-card" role="button" tabindex="0" data-service-image="assets/services/AIThreat.png" data-service-title="AI Threat & Incident Monitoring">
           <span class="node-icon alarm"></span>
           <h3>AI Threat & Incident Monitoring</h3>
           <strong>Unified Alert Solutions</strong>
           <p>Centralized detection and monitoring for faces, weapons, flooding, license plates, speed events, and security threats.</p>
         </article>
-        <article class="service-card">
+        <article class="service-card" role="button" tabindex="0" data-service-image="assets/services/UnifiedNetwork.png" data-service-title="Unified Network Infrastructure">
           <span class="node-icon network"></span>
           <h3>Unified Network Infrastructure</h3>
           <strong>Network & IT</strong>
           <p>Enterprise network devices, hardware, software, and secure infrastructure design.</p>
         </article>
-        <article class="service-card service-card-wide">
+        <article class="service-card service-card-wide" role="button" tabindex="0" data-service-image="assets/services/ProfessionalServices.png" data-service-title="Professional Services">
           <span class="node-icon professional"></span>
           <h3>Professional Services</h3>
           <strong>Turnkey Solutions</strong>
@@ -181,6 +221,17 @@
       </div>
       <div class="news-grid" data-news-list></div>
     </section>
+
+    <div class="image-modal" data-image-modal hidden>
+      <div class="image-modal-backdrop" data-modal-close></div>
+      <section class="image-modal-panel" role="dialog" aria-modal="true" aria-labelledby="service-modal-title">
+        <div class="image-modal-head">
+          <h2 id="service-modal-title" data-modal-title>Service Detail</h2>
+          <button type="button" data-modal-close aria-label="Close image">Close</button>
+        </div>
+        <img data-modal-image src="" alt="">
+      </section>
+    </div>
 
     <section id="contact" class="contact-section">
       <div class="contact-heading">

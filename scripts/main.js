@@ -208,12 +208,96 @@ function setupLanguageToggle() {
   });
 }
 
+function setupSystemCarousel() {
+  const carousel = document.querySelector("[data-system-carousel]");
+  const track = carousel?.querySelector(".system-track");
+  if (!carousel || !track) return;
+
+  const slides = Array.from(track.querySelectorAll(".system-slide"));
+  if (slides.length <= 1) return;
+
+  let index = 0;
+  let paused = false;
+
+  const goToSlide = () => {
+    const slide = slides[index];
+    if (!slide) return;
+    const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
+    const offset = index * (slide.offsetWidth + gap);
+    track.style.transform = `translateX(-${offset}px)`;
+  };
+
+  const tick = () => {
+    if (paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    index = (index + 1) % slides.length;
+    goToSlide();
+  };
+
+  carousel.addEventListener("mouseenter", () => { paused = true; });
+  carousel.addEventListener("mouseleave", () => { paused = false; });
+  carousel.addEventListener("touchstart", () => { paused = true; }, { passive: true });
+  carousel.addEventListener("touchend", () => { window.setTimeout(() => { paused = false; }, 1800); }, { passive: true });
+  window.addEventListener("resize", goToSlide);
+
+  window.setInterval(tick, 4200);
+}
+
+function setupServiceModal() {
+  const modal = document.querySelector("[data-image-modal]");
+  const image = modal?.querySelector("[data-modal-image]");
+  const title = modal?.querySelector("[data-modal-title]");
+  if (!modal || !image || !title) return;
+
+  let lastFocused = null;
+
+  const closeModal = () => {
+    modal.hidden = true;
+    image.removeAttribute("src");
+    image.alt = "";
+    document.body.classList.remove("modal-open");
+    if (lastFocused) lastFocused.focus();
+  };
+
+  const openModal = (card) => {
+    const imagePath = card.dataset.serviceImage;
+    const modalTitle = card.dataset.serviceTitle || "Service Detail";
+    if (!imagePath) return;
+    lastFocused = document.activeElement;
+    title.textContent = modalTitle;
+    image.src = imagePath;
+    image.alt = modalTitle;
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+    modal.querySelector("[data-modal-close]")?.focus();
+  };
+
+  document.querySelectorAll("[data-service-image]").forEach((card) => {
+    card.addEventListener("click", () => openModal(card));
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openModal(card);
+      }
+    });
+  });
+
+  modal.querySelectorAll("[data-modal-close]").forEach((control) => {
+    control.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) closeModal();
+  });
+}
+
 async function init() {
   const lang = document.documentElement.lang === "en" ? "en" : "th";
   setupLanguageToggle();
   setupContactForm();
-  const productPath = lang === "en" ? "data/products-en.json?v=20260608" : "data/products.json?v=20260608";
-  const newsPath = lang === "en" ? "data/news-en.json?v=20260608" : "data/news.json?v=20260608";
+  setupSystemCarousel();
+  setupServiceModal();
+  const productPath = lang === "en" ? "data/products-en.json?v=20260608d" : "data/products.json?v=20260608d";
+  const newsPath = lang === "en" ? "data/news-en.json?v=20260608d" : "data/news.json?v=20260608d";
   const [products, news] = await Promise.all([
     loadJson(productPath, fallbackProducts),
     loadJson(newsPath, lang === "en" ? fallbackNewsEn : fallbackNews)
