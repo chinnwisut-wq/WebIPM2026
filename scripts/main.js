@@ -9,7 +9,7 @@ const fallbackProducts = [
       { name: "DVMS Platform", description: "ระบบจัดการและบันทึกวิดีโอดิจิตอล", tag: "Video Management" },
       { name: "Access Control", description: "ระบบควบคุมประตูและยืนยันตัวตน", tag: "Smart Access" },
       { name: "AI Threat Alerts", description: "ตรวจจับและแจ้งเตือนภัยคุกคามหลายรูปแบบ", tag: "Incident Protection" },
-      { name: "AIOC War Room", description: "แดชบอร์ดศูนย์ควบคุมกลางสำหรับภาพรวมเหตุการณ์", tag: "Control Room" }
+      { name: "IPM AIOC Dashboard", description: "แดชบอร์ดศูนย์ควบคุมกลางสำหรับภาพรวมเหตุการณ์", tag: "Control Room" }
     ]
   }
 ];
@@ -73,7 +73,8 @@ function renderProductFilters(products) {
   const iconForItem = (item, selected) => {
     const name = `${item.name} ${item.tag}`.toLowerCase();
     if (selected.id !== "all") return selected.id;
-    if (name.includes("aioc") || name.includes("war room") || name.includes("dvms") || name.includes("video management")) return "dvms";
+    if (name.includes("aioc") || name.includes("dashboard")) return "aioc-dashboard";
+    if (name.includes("war room") || name.includes("dvms") || name.includes("video management")) return "dvms";
     if (name.includes("access")) return "access-control";
     if (name.includes("lpr") || name.includes("speed") || name.includes("license") || name.includes("radar") || name.includes("drone")) return "specialized-cameras";
     if (name.includes("alarm") || name.includes("fire") || name.includes("threat") || name.includes("weapon") || name.includes("flood") || name.includes("face") || name.includes("incident")) return "intrusion-alarm";
@@ -211,8 +212,8 @@ async function init() {
   const lang = document.documentElement.lang === "en" ? "en" : "th";
   setupLanguageToggle();
   setupContactForm();
-  const productPath = lang === "en" ? "data/products-en.json?v=20260605" : "data/products.json?v=20260605";
-  const newsPath = lang === "en" ? "data/news-en.json?v=20260605" : "data/news.json?v=20260605";
+  const productPath = lang === "en" ? "data/products-en.json?v=20260608" : "data/products.json?v=20260608";
+  const newsPath = lang === "en" ? "data/news-en.json?v=20260608" : "data/news.json?v=20260608";
   const [products, news] = await Promise.all([
     loadJson(productPath, fallbackProducts),
     loadJson(newsPath, lang === "en" ? fallbackNewsEn : fallbackNews)

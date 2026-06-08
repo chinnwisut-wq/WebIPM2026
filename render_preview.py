@@ -183,7 +183,7 @@ text(draw, (184, 1638), "▦", F24B, WHITE, "mm")
 text(draw, (150, 1688), "Selected Category", F12, RED)
 text(draw, (150, 1722), "All Products", F24B, INK)
 
-for i, label in enumerate(["IP Network Camera", "AIOC War Room", "Access Control", "AI Threat Alerts"]):
+for i, label in enumerate(["IP Network Camera", "IPM AIOC Dashboard", "Access Control", "AI Threat Alerts"]):
     x = 640 + (i % 2) * 290
     y = 1580 + (i // 2) * 84
     rounded(draw, (x, y, x + 260, y + 68), 16, WHITE, LINE)

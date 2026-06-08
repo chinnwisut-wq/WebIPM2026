@@ -9,7 +9,7 @@
       {"name": "DVMS Platform", "description": "Digital video management and recording platform.", "tag": "Video Management"},
       {"name": "Access Control", "description": "Door control and identity verification systems.", "tag": "Smart Access"},
       {"name": "AI Threat Alerts", "description": "Multi-scenario threat detection and alerting.", "tag": "Incident Protection"},
-      {"name": "AIOC War Room", "description": "Central command dashboard for incident visibility.", "tag": "Control Room"}
+      {"name": "IPM AIOC Dashboard", "description": "Central command dashboard for incident visibility.", "tag": "Control Room"}
     ]
   },
   {
@@ -33,7 +33,7 @@
       {"name": "Video Recording", "description": "Digital video recording and retention.", "tag": "Recording"},
       {"name": "Monitoring Console", "description": "Centralized control room interface.", "tag": "Control Room"},
       {"name": "Playback & Search", "description": "Search and review recorded footage.", "tag": "Investigation"},
-      {"name": "AIOC War Room Dashboard", "description": "Combines camera views, incidents, and system status for the command center.", "tag": "AIOC"}
+      {"name": "IPM AIOC Dashboard", "description": "Combines camera views, incidents, and system status for the command center.", "tag": "AIOC"}
     ]
   },
   {

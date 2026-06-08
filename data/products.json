@@ -9,7 +9,7 @@
       {"name": "DVMS Platform", "description": "ระบบจัดการและบันทึกวิดีโอดิจิตอล", "tag": "Video Management"},
       {"name": "Access Control", "description": "ระบบควบคุมประตูและยืนยันตัวตน", "tag": "Smart Access"},
       {"name": "AI Threat Alerts", "description": "ตรวจจับและแจ้งเตือนภัยคุกคามหลายรูปแบบ", "tag": "Incident Protection"},
-      {"name": "AIOC War Room", "description": "แดชบอร์ดศูนย์ควบคุมกลางสำหรับภาพรวมเหตุการณ์", "tag": "Control Room"}
+      {"name": "IPM AIOC Dashboard", "description": "แดชบอร์ดศูนย์ควบคุมกลางสำหรับภาพรวมเหตุการณ์", "tag": "Control Room"}
     ]
   },
   {
@@ -33,7 +33,7 @@
       {"name": "Video Recording", "description": "ระบบบันทึกภาพดิจิตอล", "tag": "Recording"},
       {"name": "Monitoring Console", "description": "หน้าจอควบคุมศูนย์กลาง", "tag": "Control Room"},
       {"name": "Playback & Search", "description": "ค้นหาและตรวจสอบภาพย้อนหลัง", "tag": "Investigation"},
-      {"name": "AIOC War Room Dashboard", "description": "รวมภาพกล้อง เหตุการณ์ และสถานะระบบในศูนย์ควบคุมกลาง", "tag": "AIOC"}
+      {"name": "IPM AIOC Dashboard", "description": "รวมภาพกล้อง เหตุการณ์ และสถานะระบบในศูนย์ควบคุมกลาง", "tag": "AIOC"}
     ]
   },
   {
