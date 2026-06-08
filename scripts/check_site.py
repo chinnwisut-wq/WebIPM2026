@@ -32,7 +32,7 @@ result = {
     "newsItemsEn": len(news_en.get("items", [])),
     "hasMailtoForm": "mailto:info@ipm.co.th" in (root / "scripts" / "main.js").read_text(encoding="utf-8"),
     "hasBlueActiveFilter": "#116da8" in (root / "styles.css").read_text(encoding="utf-8"),
-    "hasWideCctvIcon": "viewBox='0 0 52 34'" in (root / "styles.css").read_text(encoding="utf-8"),
+    "hasWideCctvIcon": "viewBox='0 0 64 48'" in (root / "styles.css").read_text(encoding="utf-8"),
     "hasThaiToEnglishLink": 'href="en.html"' in (root / "index.html").read_text(encoding="utf-8"),
     "hasEnglishToThaiLink": 'href="index.html"' in (root / "en.html").read_text(encoding="utf-8"),
     "hasEnglishHero": "Enterprise Security, Connected" in (root / "en.html").read_text(encoding="utf-8"),
